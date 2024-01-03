@@ -1,4 +1,4 @@
-- # android-external-sdk
+# android-external-sdk
 
 Install GitHooks Pre-Commit on OSX/Linux
 
