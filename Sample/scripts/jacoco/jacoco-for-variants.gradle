@@ -1,0 +1,176 @@
+variants().all { variant ->
+    def tag = "[jacoco.gradle]"
+    def variantName = variant.name
+    def variantCapName = variantName.capitalize()
+    def fullTestTask = "testSuite${variantCapName}JacocoReport"
+    def unitTestTask = "test${variantCapName}UnitTest"
+
+    if (variantCapName != "DevDebug") {
+        println "$tag ${project.name} Task '$fullTestTask' is not enabled for Release builds."
+        return
+    }
+
+    apply plugin: 'jacoco'
+
+    jacoco {
+        toolVersion = "0.8.7"
+        reportsDir = file("$buildDir/reports")
+        tasks.withType(Test) {
+            toolVersion = "0.8.7"
+            jacoco.includeNoLocationClasses = true
+            jacoco.excludes = ['jdk.internal.*']
+        }
+    }
+
+    //
+    // use create<>CoverateReport since connectedCheck task does not generate jacoco reports so we
+    // need to depend on tasks that run tests + coverage
+    //
+    def instrumentedTestTask = "create${variantCapName}CoverageReport"
+
+    if (project.tasks.findByName(unitTestTask) == null ||
+            project.tasks.findByName(instrumentedTestTask) ==
+            null) {
+        // logger.warn "$tag ${project.name} Task '$fullTestTask' was not created, you can enable it by passing -PcoverageEnabled or by setting testCoverageEnabled=true in gradle.android setup."
+
+        return
+    } else {
+        // logger.warn "You can use $fullTestTask"
+    }
+
+    tasks.withType(Test) {
+        // Whether or not classes without source location should be instrumented
+        jacoco.includeNoLocationClasses true
+        jacoco.excludes = ['jdk.internal.*']
+        enabled = true
+    }
+
+    if (variantCapName == "DevDebug") {
+        println "Configuring ${project.name}, variant $variantCapName"
+
+        if (!project.tasks.findByName("jacocoReport")) return
+
+        project.tasks.findByName("jacocoReport").configure {
+            group = "Reporting"
+            description =
+                    "Generate Jacoco coverage reports for $variantCapName Instrumented and UnitTest Tests"
+            onlyIf = { return true }
+
+            // TODO disable instrumented test temporary until we resolve the issue
+            dependsOn([/*instrumentedTestTask, */unitTestTask])
+
+            reports {
+                xml.enabled = true
+                html.enabled = true
+                csv.enabled = false
+            }
+
+            def androidFilter = [
+                    // data binding
+                    'android/**/*.*',
+                    'androidx/**/*.*',
+                    '**/android/**/*.*',
+                    '**/androidx/**/*.*',
+                    '**/databinding/**/*.*',
+                    '**/databinding/*.*',
+                    '**/BR.*',
+                    // android
+                    '**/R.class',
+                    '**/R$*.class',
+                    '**/BuildConfig.*',
+                    '**/Manifest*.*',
+                    '**/AndroidManifest*.*',
+                    '**/*Test*.*',
+                    // kotlin
+                    '**/*$Lambda$*.*',
+                    '**/*Companion*.*',
+                    // sealed and data classes
+                    '**/*$Result.*',
+                    '**/*$Result$*.*',
+                    // android room generated class
+                    '**/*_Impl.*',
+                    // generated classes and functions
+                    '**/*$*.*',
+                    '**/generated/*',
+                    '**/generated/**/*',
+
+                    // project models
+                    '**/model/**/*',
+                    '**/models/**/*',
+                    '**/*ViewHolder.kt',
+                    '**/*Fragment.kt',
+                    '**/*Activity.kt',
+                    '**/*Dialog.kt',
+                    '**/*App.kt',
+                    '**/*Module.kt',
+                    '**/*Modules.kt',
+                    '**/ui/*Adapter.kt',
+                    '**/ui/**/*Adapter.kt',
+                    '**/*JsonAdapter.*',
+                    '**/dao/*',
+                    'com/inetpsa/**/*',
+                    'com/gma/**/*',
+                    'com/space/gma/**/*'
+            ]
+
+            def librariesFilter = [
+                    '**/com/barista_v/**/*.*',
+                    '**/com/baristav/**/*.*',
+                    '**/com/esotericsoftware/**/*.*',
+                    '**/com/crashlytics/**/*.*',
+                    '**/com/facebook/**/*.*',
+                    '**/com/jakewharton/**/*.*',
+                    '**/com/onesignal/**/*.*',
+                    '**/com/viewpagerindicator/**/*.*',
+                    '**/io/fabric/**/*.*',
+                    '**/io/reactivex/**/*.*',
+                    '**/net/danlew/**/*.*',
+                    '**/timber/**/*.*',
+                    '**/removeme/**/*.*',
+                    '**/squareup/**/*.*',
+                    '**/uvs/*',
+                    '**/pims/*',
+                    '**/foundation/*'
+
+            ]
+
+            def fileFilter = androidFilter + librariesFilter
+            def includeFilter = [
+                    '**/*.*'
+            ]
+
+            def javaDevDebugTree = fileTree(dir: variant.javaCompiler.destinationDir, includes: includeFilter,
+                    excludes: fileFilter)
+            def kotlinDevDebugTree = fileTree(dir: "$buildDir/tmp/kotlin-classes/$variantName", includes: includeFilter,
+                    excludes: fileFilter)
+
+            sourceDirectories.from = files(["src/main/java",
+                                            "src/main/kotlin",
+                                            "src/$variantName/java",
+                                            "src/$variantName/kotlin"])
+
+            classDirectories.from = files([javaDevDebugTree], [kotlinDevDebugTree])
+
+            executionData.from = fileTree(dir: "$buildDir",
+                    includes: [
+                            "jacoco/testDevDebugUnitTest.exec",
+                               // "**/*.exec",
+                               // "*.exec",
+                               // "../jacoco.exec",
+                               'outputs/code-coverage/connected/*coverage.ec',
+                               "outputs/code_coverage/${variantCapName}AndroidTest/connected/*coverage.ec"])
+
+            doLast {
+                println "Custom $fullTestTask Jacoco task run for instrumented and unit-tests."
+            }
+        }
+    }
+}
+
+def variants() {
+    if (project.android.hasProperty('libraryVariants')) {
+        return project.android.libraryVariants
+    } else {
+        return project.android.applicationVariants
+    }
+}

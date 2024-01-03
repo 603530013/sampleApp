@@ -3,6 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        includeBuild("buildconfig")
     }
 }
 dependencyResolutionManagement {
@@ -15,4 +16,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Sample"
 include(":app")
- 
