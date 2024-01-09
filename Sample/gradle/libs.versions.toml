@@ -11,6 +11,12 @@ appcompat = "1.6.1"
 material = "1.6.1"
 constraintlayout = "2.1.4"
 
+#Koin : Android dependency injection
+koin = "2.2.2"
+
+#Navigation : Navigation Library
+navigation = "2.5.2"
+
 #coverage : Unit test coverage
 coverage = "1.6.0"
 
@@ -42,6 +48,15 @@ kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", v
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
 coverage = { module = "nl.neotech.plugin:android-root-coverage-plugin", version.ref = "coverage" }
+
+koin = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-scope = { group = "io.insert-koin", name = "koin-androidx-scope", version.ref = "koin" }
+koin-fragment = { group = "io.insert-koin", name = "koin-androidx-fragment", version.ref = "koin" }
+koin-viewmodel = { group = "io.insert-koin", name = "koin-androidx-viewmodel", version.ref = "koin" }
+koin-ext = { group = "io.insert-koin", name = "koin-androidx-ext", version.ref = "koin" }
+
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
