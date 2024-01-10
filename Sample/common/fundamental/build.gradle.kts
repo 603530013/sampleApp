@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mobiledrivetech.external.common.base"
+    namespace = "com.mobiledrivetech.external.common.fundamental"
     compileSdk = 34
 
     defaultConfig {
@@ -34,15 +34,13 @@ android {
 }
 
 dependencies {
+    implementation(project(":common:base"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
-    api(libs.koin)
-    api(libs.koin.scope)
-    api(libs.koin.fragment)
-    api(libs.koin.viewmodel)
-    api(libs.koin.ext)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

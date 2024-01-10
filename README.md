@@ -14,3 +14,13 @@ If commit failed, read the error threw, then fix your code and commit again.
 ```sh
 ./gradlew detekt spotlessApply --daemon
 ```
+
+If you need specific lib, write the dependency in the dependencies block of build.gradle
+```sh
+implementation(libsName)
+```
+
+If you need the whole module, write the dependency in the dependencies block of build.gradle
+```sh
+api(project("modulePath"))
+```

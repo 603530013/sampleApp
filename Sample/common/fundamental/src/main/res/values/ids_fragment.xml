@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="navigation.fragment.launcher" type="id" />
+    <item name="navigation.fragment.brand" type="id" />
+    <item name="navigation.brand" type="id" />
+    <item name="navigation.main.fragment" type="id" />
+    <item name="navigation.fragment.launcher.psa" type="id" />
+    <item name="navigation.fragment.launcher.fca" type="id" />
+
+    <!-- id banner container -->
+    <item name="toast.container.activity" type="id" />
+    <item name="banner.container.activity" type="id" />
+</resources>
