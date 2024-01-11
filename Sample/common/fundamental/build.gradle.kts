@@ -37,7 +37,8 @@ dependencies {
     implementation(project(":common:base"))
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.appcompat)
+    api(libs.koin.fragment)
+    api(libs.koin.viewmodel)
     implementation(libs.material)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)

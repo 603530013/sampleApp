@@ -4,6 +4,7 @@ import android.content.ComponentCallbacks
 import androidx.annotation.RestrictTo
 import androidx.lifecycle.LifecycleOwner
 import org.koin.android.ext.android.getKoin
+import org.koin.core.component.KoinApiExtension
 import org.koin.core.component.KoinComponent
 import org.koin.core.context.GlobalContext
 import org.koin.core.definition.BeanDefinition
@@ -21,6 +22,7 @@ inline fun <reified C> Module.coordinator(
     noinline definition: Definition<C>
 ): BeanDefinition<C> where C : Coordinator<*, *> = single(qualifier, createdAtStart, override, definition)
 
+@OptIn(KoinApiExtension::class)
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 fun LifecycleOwner.getKoin() = when (this) {
     is KoinComponent -> this.getKoin()

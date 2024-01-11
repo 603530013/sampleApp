@@ -54,8 +54,6 @@ fun String.isValidPhoneNumber(): Boolean =
 fun String.isValidSmsCode(): Boolean =
     this.isNotBlank() && "^[0-9]{4,10}\$".toRegex().matches(this)
 
-fun String.isValidPin(): Boolean =
-    this.isNotBlank() && "^[0-9]{4}$".toRegex().matches(this)
 
 fun String.isIdenticalPins(confirmation: String): Boolean = this == confirmation
 

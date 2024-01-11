@@ -40,8 +40,6 @@ dependencies {
     implementation(libs.material)
     api(libs.koin)
     api(libs.koin.scope)
-    api(libs.koin.fragment)
-    api(libs.koin.viewmodel)
     api(libs.koin.ext)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
