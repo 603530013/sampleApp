@@ -69,9 +69,6 @@ configure<RootCoveragePluginExtension> {
         "**/ui/**/*Adapter.*",
         "**/*JsonAdapter.*",
         "**/dao/*",
-        "com/inetpsa/**/*",
-        "com/gma/**/*",
-        "com/space/gma/**/*",
         "**/di/**/*", // filter dependency injection modules
         "**/bindings/**/*", // filter data bindings function
         "**/binding/**/*",
@@ -80,7 +77,5 @@ configure<RootCoveragePluginExtension> {
         "**/ui/delegates/*", // filter UI delegates
         "**/presentation/compose/*", // filter Compose
         "**/test/**/*", // filter test package
-        "com/stellantis/space/feature/theme/**", // filter not needed theme modules
-        "com/stellantis/logger/**" // filter not needed logger modules
     )
 }

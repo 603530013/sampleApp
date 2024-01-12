@@ -12,3 +12,7 @@ val runningTestCoverage = if (project.hasProperty("coverage")) {
 } else {
     false
 }
+
+dependencies {
+    implementation(project(":middleware"))
+}

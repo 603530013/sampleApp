@@ -74,10 +74,7 @@ configure(coveredProject) { prj ->
                 '**/ui/**/*Adapter.kt',
                 '**/*JsonAdapter.*',
                 '**/dao/*',
-                '**/common/base/base/**',
-                'com/inetpsa/**/*',
-                'com/gma/**',
-                'com/space/gma/**/*'
+                '**/common/base/base/**'
         ]
 
         def includeFilter = [
