@@ -107,10 +107,7 @@ variants().all { variant ->
                     '**/ui/*Adapter.kt',
                     '**/ui/**/*Adapter.kt',
                     '**/*JsonAdapter.*',
-                    '**/dao/*',
-                    'com/inetpsa/**/*',
-                    'com/gma/**/*',
-                    'com/space/gma/**/*'
+                    '**/dao/*'
             ]
 
             def librariesFilter = [
