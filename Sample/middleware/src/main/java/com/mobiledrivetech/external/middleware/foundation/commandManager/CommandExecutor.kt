@@ -48,13 +48,8 @@ class CommandExecutor(
         }
 
     init {
-        flow.onEach { collectCommand(it) }
+        flow.onEach { executeCommand(it) }
             .launchIn(scope)
-    }
-
-    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-    internal suspend fun collectCommand(command: Command) {
-        executeCommand(command)
     }
 
     fun send(command: Command) {

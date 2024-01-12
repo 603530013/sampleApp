@@ -5,6 +5,7 @@ internal object Constants {
     const val API_PREFIX = "mobiledrivetech.middleware"
     const val SERVICE_NAME = "middleware"
     const val COMPONENT_NAME = "MiddlewareComponent"
+    const val APIS = "apis"
 
     internal object API {
         const val CONFIGURATION = "configuration"
@@ -24,11 +25,13 @@ internal object Constants {
         }
     }
 
-    const val APIS = "apis"
-
     const val PARAMS_KEY_CREDENTIAL = "credential"
     const val PARAMS_KEY_PROFILE = "profile"
     const val PARAMS_KEY_GOOGLE_API_KEY = "googleApiKey"
+    const val PARAMS_KEY_CODE = "code"
+    const val PARAMS_KEY_LABEL = "label"
+    const val PARAMS_KEY_SUB_CODE = "subCode"
+    const val PARAMS_KEY_INFO = "info"
 
     const val CONTEXT_KEY_ENVIRONMENT = "environment"
     const val CONTEXT_KEY_MODE = "mode"

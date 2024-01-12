@@ -15,8 +15,7 @@ fun Map<String, Any?>.sort(): Map<String, Any?> {
     for ((k, v) in sortedMap) {
         when (v) {
             is Map<*, *> -> {
-                val child = (v as Map<String, Any>).sort()
-                sortedMap[k] = child
+                sortedMap[k] = (v as Map<String, Any>).sort()
             }
 
             is List<*> -> {
@@ -29,8 +28,7 @@ fun Map<String, Any?>.sort(): Map<String, Any?> {
                     }
                     sortedMap[k] = list
                 } else {
-                    val list = v.sortedBy { it.toString() }
-                    sortedMap[k] = list
+                    sortedMap[k] = v.sortedBy { it.toString() }
                 }
             }
         }
@@ -45,8 +43,8 @@ fun Map<String, Any?>.sort(): Map<String, Any?> {
  * @return T
  */
 @Throws(MiddleWareError::class)
-inline infix fun <reified T> Map<String, Any?>?.has(name: String): T {
-    return when {
+inline infix fun <reified T> Map<String, Any?>?.has(name: String): T =
+    when {
         this == null -> throw name.toMissingParamError()
         this.isEmpty() -> throw name.toMissingParamError()
         !this.containsKey(name) -> throw name.toMissingParamError()
@@ -57,7 +55,7 @@ inline infix fun <reified T> Map<String, Any?>?.has(name: String): T {
         this[name] is T -> this[name] as T
         else -> throw name.toMissingParamError()
     }
-}
+
 
 fun String.toMissingParamError() = MiddleWareErrorFactory.create(
     ErrorCode.missingParams, ErrorMessage.missingParams(this)

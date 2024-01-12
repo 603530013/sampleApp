@@ -1,7 +1,8 @@
 package com.mobiledrivetech.external.middleware
 
-import android.util.Log
 import com.mobiledrivetech.external.middleware.Constants.CONTEXT_KEY_BRAND
+import com.mobiledrivetech.external.middleware.Constants.KEY_ERROR
+import com.mobiledrivetech.external.middleware.Constants.KEY_STATUS
 import com.mobiledrivetech.external.middleware.command.configuration.SetConfigurationCommand
 import com.mobiledrivetech.external.middleware.command.test.TestCommandGet
 import com.mobiledrivetech.external.middleware.extensions.asMap
@@ -13,6 +14,7 @@ import com.mobiledrivetech.external.middleware.foundation.models.CommandName
 import com.mobiledrivetech.external.middleware.foundation.models.CommandStatus
 import com.mobiledrivetech.external.middleware.foundation.models.CommandType
 import com.mobiledrivetech.external.middleware.foundation.models.Market
+import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
 import com.mobiledrivetech.external.middleware.manager.ConfigurationManager
 import com.mobiledrivetech.external.middleware.manager.ConfigurationManagerImp
 import com.mobiledrivetech.external.middleware.model.configuration.ConfigurationInput
@@ -92,7 +94,7 @@ internal class MiddlewareComponent : GenericCoreComponent() {
             configurationManager.initialize(component = this, config = config)
 
         } catch (ex: MiddleWareError) {
-            Log.w("", ex)
+            MDLog.warning(ex.toString())
             callback(failure(ex))
             return // return to prevent calling callback twice time
         }
@@ -100,5 +102,5 @@ internal class MiddlewareComponent : GenericCoreComponent() {
     }
 
     private fun failure(ex: MiddleWareError): Map<String, Any> =
-        mapOf("status" to CommandStatus.FAILED, "error" to ex.asMap())
+        mapOf(KEY_STATUS to CommandStatus.FAILED, KEY_ERROR to ex.asMap())
 }

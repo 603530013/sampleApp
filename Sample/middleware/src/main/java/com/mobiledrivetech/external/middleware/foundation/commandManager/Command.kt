@@ -54,19 +54,16 @@ open class Command(
         type: CommandType?,
         parameters: Map<String, Any?>?,
         configuration: Map<String, Any?>?
-    ): Command {
-        return clone().apply {
-            this.transactionId = "${UUID.randomUUID()}-${System.currentTimeMillis() / 1000}"
-            this.name = name
-            this.type = type
-            this.parameters = parameters
-            this.configuration = configuration
-            this.identifier = "$type+$name+${parameters?.sort()}".uppercase(Locale.ROOT)
-
-            this.result = null
-            this.error = null
-            this.status = CommandStatus.WAITING
-        }
+    ): Command = clone().apply {
+        this.transactionId = "${UUID.randomUUID()}-${System.currentTimeMillis() / 1000}"
+        this.name = name
+        this.type = type
+        this.parameters = parameters
+        this.configuration = configuration
+        this.identifier = "$type+$name+${parameters?.sort()}".uppercase(Locale.ROOT)
+        this.result = null
+        this.error = null
+        this.status = CommandStatus.WAITING
     }
 
     @Expose
@@ -131,45 +128,38 @@ open class Command(
     open suspend fun execute(callback: () -> Unit) {
     }
 
-    internal suspend fun execute(dispatcher: DispatcherProvider, callback: () -> Unit) {
+    internal suspend fun execute(dispatcher: DispatcherProvider, callback: () -> Unit) =
         execute(callback)
-    }
 
+    fun deserialize(jsonString: String): Command = Gson().fromJson(jsonString, this::class.java)
 
-    fun deserialize(jsonString: String): Command {
-        val result = Gson().fromJson(jsonString, this::class.java)
-        return result
-    }
-
-    private fun fillContext(): Map<String, Any?> {
-        return mapOf(
-            Pair(Constants.CONTEXT_KEY_PHONE_MODEL, Build.MODEL),
-            Pair(Constants.CONTEXT_KEY_OS_VERSION, Build.VERSION.RELEASE),
-            Pair(
-                Constants.CONTEXT_KEY_ENVIRONMENT,
-                configuration?.get(Constants.CONTEXT_KEY_ENVIRONMENT)
-            ),
-            Pair(Constants.CONTEXT_KEY_MODE, configuration?.get(Constants.CONTEXT_KEY_MODE)),
-            Pair(
-                Constants.CONTEXT_KEY_LOG_LEVEL,
-                configuration?.get(Constants.CONTEXT_KEY_LOG_LEVEL)
-            ),
-            Pair(
-                Constants.CONTEXT_KEY_CLIENT_ID,
-                configuration?.get(Constants.CONTEXT_KEY_CLIENT_ID)
-            ),
-            Pair(
-                Constants.CONTEXT_KEY_CLIENT_SECRET,
-                configuration?.get(Constants.CONTEXT_KEY_CLIENT_SECRET)
-            ),
-            Pair(Constants.CONTEXT_KEY_BRAND, configuration?.get(Constants.CONTEXT_KEY_BRAND)),
-            Pair(
-                Constants.CONTEXT_KEY_RETURN_TYPE,
-                configuration?.get(Constants.CONTEXT_KEY_RETURN_TYPE)
-            ),
-            Pair(Constants.CONTEXT_KEY_LOGIN, configuration?.get(Constants.CONTEXT_KEY_LOGIN)),
-        )
-    }
+    private fun fillContext(): Map<String, Any?> = mapOf(
+        Pair(Constants.CONTEXT_KEY_PHONE_MODEL, Build.MODEL),
+        Pair(Constants.CONTEXT_KEY_OS_VERSION, Build.VERSION.RELEASE),
+        Pair(
+            Constants.CONTEXT_KEY_ENVIRONMENT,
+            configuration?.get(Constants.CONTEXT_KEY_ENVIRONMENT)
+        ),
+        Pair(Constants.CONTEXT_KEY_MODE, configuration?.get(Constants.CONTEXT_KEY_MODE)),
+        Pair(
+            Constants.CONTEXT_KEY_LOG_LEVEL,
+            configuration?.get(Constants.CONTEXT_KEY_LOG_LEVEL)
+        ),
+        Pair(
+            Constants.CONTEXT_KEY_CLIENT_ID,
+            configuration?.get(Constants.CONTEXT_KEY_CLIENT_ID)
+        ),
+        Pair(
+            Constants.CONTEXT_KEY_CLIENT_SECRET,
+            configuration?.get(Constants.CONTEXT_KEY_CLIENT_SECRET)
+        ),
+        Pair(Constants.CONTEXT_KEY_BRAND, configuration?.get(Constants.CONTEXT_KEY_BRAND)),
+        Pair(
+            Constants.CONTEXT_KEY_RETURN_TYPE,
+            configuration?.get(Constants.CONTEXT_KEY_RETURN_TYPE)
+        ),
+        Pair(Constants.CONTEXT_KEY_LOGIN, configuration?.get(Constants.CONTEXT_KEY_LOGIN)),
+    )
 
     fun toMap(): Map<String, Any?> = hashMapOf<String, Any?>().apply {
         this[Constants.KEY_TRANSACTION_ID] = transactionId
@@ -183,7 +173,5 @@ open class Command(
         this[Constants.KEY_CONTEXT] = context
     }
 
-    override fun clone(): Command {
-        return super.clone() as Command
-    }
+    override fun clone(): Command = super.clone() as Command
 }

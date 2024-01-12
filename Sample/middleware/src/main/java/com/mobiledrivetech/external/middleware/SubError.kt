@@ -1,6 +1,6 @@
 package com.mobiledrivetech.external.middleware
 
-import android.util.Log
+import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
 
 const val STATUS = "status"
 const val BODY = "body"
@@ -8,12 +8,12 @@ const val BODY = "body"
 data class SubError(val status: Int, val body: String) {
 
     fun toMap(): Map<String, Any> {
-        Log.v("", "-->")
+        MDLog.debug("-->")
         val result = mapOf(
             Pair(STATUS, status),
             Pair(BODY, body)
         )
-        Log.v("", "<-- result: $result")
+        MDLog.debug("<-- result: $result")
         return result
     }
 }

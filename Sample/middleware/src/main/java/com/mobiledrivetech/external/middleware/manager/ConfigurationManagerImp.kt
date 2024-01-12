@@ -14,7 +14,6 @@ internal class ConfigurationManagerImp : ConfigurationManager {
     private var _environment: Environment? = null
     private var _brandCode: String? = null
     private var _brand: Brand? = null
-
     private var _googleApiKey: String? = null
     private var _market: Market? = null
     private var _siteCode: String? = null
@@ -58,12 +57,10 @@ internal class ConfigurationManagerImp : ConfigurationManager {
     ) {
         _environment = config.environment
         _brand = config.brand
-
         _googleApiKey = config.googleApiKey
         _locale = config.locale ?: Locale.ENGLISH
         _market = config.market
         _siteCode = config.siteCode
-
         _languagePath = config.languagePath
     }
 
@@ -73,15 +70,12 @@ internal class ConfigurationManagerImp : ConfigurationManager {
     ) {
         config.environment?.let { _environment = it }
         config.brand?.let { _brand = it }
-
         config.googleApiKey?.let { _googleApiKey = it }
-
         config.locale?.let {
             _locale = it
         }
         config.market?.let { _market = it }
         config.siteCode?.let { _siteCode = it }
-
         config.languagePath?.let { _languagePath = it }
     }
 }

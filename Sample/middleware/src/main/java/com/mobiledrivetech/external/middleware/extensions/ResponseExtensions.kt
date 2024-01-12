@@ -7,12 +7,9 @@ import com.mobiledrivetech.external.middleware.util.MiddleWareFoundationError
 internal inline fun <T> Response<T>.handleResult(
     actionSuccess: (T) -> Unit,
     actionFailure: (MiddleWareError?) -> Unit
-) {
-    when (this) {
-        is Response.Failure -> actionFailure(this.error)
-
-        is Response.Success -> actionSuccess(this.response)
-    }
+) = when (this) {
+    is Response.Failure -> actionFailure(this.error)
+    is Response.Success -> actionSuccess(this.response)
 }
 
 @Throws(MiddleWareError::class)
