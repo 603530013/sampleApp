@@ -1,6 +1,5 @@
 package com.mobiledrivetech.external.middleware
 
-import android.content.Context
 import android.util.Log
 import com.mobiledrivetech.external.middleware.Constants.CONTEXT_KEY_BRAND
 import com.mobiledrivetech.external.middleware.command.configuration.SetConfigurationCommand
@@ -22,8 +21,7 @@ import com.mobiledrivetech.external.middleware.util.hasEnvironment
 import com.mobiledrivetech.external.middleware.util.hasOrNull
 import java.util.Locale
 
-@Suppress("TooManyFunctions")
-internal class MiddlewareComponent(val context: Context) : GenericCoreComponent(context) {
+internal class MiddlewareComponent : GenericCoreComponent() {
 
     override var serviceName: String? = Constants.SERVICE_NAME
     override var name: String? = Constants.COMPONENT_NAME
@@ -56,7 +54,6 @@ internal class MiddlewareComponent(val context: Context) : GenericCoreComponent(
     }
 
     override fun initialize(
-        context: Context,
         parameters: Map<String, Any>,
         callback: (Map<String, Any>) -> Unit
     ) {
@@ -99,7 +96,7 @@ internal class MiddlewareComponent(val context: Context) : GenericCoreComponent(
             callback(failure(ex))
             return // return to prevent calling callback twice time
         }
-        super.initialize(context, parameters, callback)
+        super.initialize(parameters, callback)
     }
 
     private fun failure(ex: MiddleWareError): Map<String, Any> =

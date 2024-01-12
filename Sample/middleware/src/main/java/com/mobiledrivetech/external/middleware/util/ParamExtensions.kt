@@ -11,12 +11,11 @@ internal infix fun Map<String, Any?>?.hasEnvironment(name: String): Environment 
     hasEnvironmentOrNull(name) ?: throw MiddleWareFoundationError.invalidParameter(name)
 
 @Throws(MiddleWareError::class)
-internal infix fun Map<String, Any?>?.hasEnvironmentOrNull(name: String): Environment? {
-    return when (this.hasOrNull<String>(name)) {
+internal infix fun Map<String, Any?>?.hasEnvironmentOrNull(name: String): Environment? =
+    when (this.hasOrNull<String>(name)) {
         "Development" -> Environment.DEV
         else -> null
     }
-}
 
 @Suppress("SwallowedException")
 internal inline infix fun <reified T> Map<String, Any?>?.hasOrNull(name: String): T? = try {
@@ -35,7 +34,7 @@ internal inline fun <reified T> Map<String, Any?>?.has(name: String, optional: B
         true -> try {
             this has name
         } catch (e: MiddleWareError) {
-            null
+            throw e
         }
 
         else -> this has name

@@ -1,6 +1,5 @@
 package com.mobiledrivetech.external.middleware.foundation.genericComponent
 
-import android.content.Context
 import com.mobiledrivetech.external.middleware.MiddleWareError
 
 interface GenericComponentInterface {
@@ -9,10 +8,8 @@ interface GenericComponentInterface {
      * Initialize component
      * @param parameters: map<String, Any> contains the parameters
      * @param callback: to be invoked on response
-     * @param context app context
      */
     fun initialize(
-        context: Context,
         parameters: Map<String, Any>,
         callback: (Map<String, Any>) -> Unit
     )

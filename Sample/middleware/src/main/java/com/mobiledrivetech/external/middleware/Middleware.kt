@@ -1,13 +1,12 @@
 package com.mobiledrivetech.external.middleware
 
-import android.content.Context
 import androidx.annotation.VisibleForTesting
 
-class Middleware(private val context: Context) : IMiddleware {
+class Middleware : IMiddleware {
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     internal val core: MiddlewareComponent by lazy {
-        MiddlewareComponent(context.applicationContext)
+        MiddlewareComponent()
     }
 
     override fun get(
@@ -19,7 +18,7 @@ class Middleware(private val context: Context) : IMiddleware {
     override fun initialize(
         parameters: Map<String, Any>,
         callback: (Map<String, Any>) -> Unit
-    ) = core.initialize(context, parameters, callback)
+    ) = core.initialize(parameters, callback)
 
     override fun release() = core.release()
 

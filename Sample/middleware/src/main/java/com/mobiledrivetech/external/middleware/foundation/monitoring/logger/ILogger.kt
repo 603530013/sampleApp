@@ -24,7 +24,6 @@ interface ILogger {
     /** Log a warning message with optional format args. */
     fun warning(tag: String, type: SpecificLogType? = null, message: String? = "")
 
-
     /** Log a error message with optional format args. */
     fun error(tag: String, type: SpecificLogType? = null, message: String? = "")
 }

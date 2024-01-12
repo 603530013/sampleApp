@@ -11,6 +11,6 @@ enum class SpecificLogType {
     NEVER_HAPPEN, // Never happen
     POLLING, // Intentionally Poll
     RETRY, // Retry
-    Delay, // Force Delay
-    WORKAROUND,// Workaround
+    DELAY, // Force Delay
+    WORKAROUND// Workaround
 }

@@ -37,7 +37,7 @@ open class CommandName(name: String) {
         private set
 
     override fun toString(): String {
-        return name!!
+        return name ?: ""
     }
 
     override fun equals(other: Any?): Boolean {

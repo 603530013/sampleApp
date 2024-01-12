@@ -1,6 +1,5 @@
 package com.mobiledrivetech.external.middleware.foundation.genericComponent
 
-import android.content.Context
 import com.mobiledrivetech.external.middleware.Constants.APIS
 import com.mobiledrivetech.external.middleware.MiddleWareError
 import com.mobiledrivetech.external.middleware.foundation.commandManager.CommandManager
@@ -12,33 +11,26 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 
-open class GenericCoreComponent(context: Context) : GenericComponentInterface {
+open class GenericCoreComponent : GenericComponentInterface {
 
     private var uuid: String? = null
 
     open var name: String? = "GenericCoreComponent"
     open var version: String? = ""
-
     open var serviceName: String? = ""
 
-
     var commandManager: ICommandManager = CommandManager()
-
-//    val communicationManager: ICommunicationManager by lazy {
-//        CommunicationManager(context, this, CoroutineScope(Dispatchers.IO))
-//    }
 
     private val job = SupervisorJob()
 
     private val scope = CoroutineScope(Dispatchers.Default + job)
 
     override fun initialize(
-        context: Context,
         parameters: Map<String, Any>,
         callback: (Map<String, Any>) -> Unit
     ) {
         MDLog.debug("component: $name $version")
-        MDLog.debug("context: ${context::class.simpleName}, parameters: $parameters")
+        MDLog.debug("parameters: $parameters")
 
         commandManager.initialize(configuration = parameters, componentReference = this)
         callback.invoke(mapOf(APIS to commandManager.supportedApis()))

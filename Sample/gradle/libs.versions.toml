@@ -51,8 +51,6 @@ android-application = { id = "com.android.application", version.ref = "androidGr
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "ktx" }
 
-
-
 rootcoverage = { id = "nl.neotech.plugin.rootcoverage", version.ref = "coverage" }
 
 [bundles]

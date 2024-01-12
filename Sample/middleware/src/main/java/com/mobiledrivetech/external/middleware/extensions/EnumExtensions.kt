@@ -18,13 +18,11 @@ interface EnumValue {
  * @return T? : the Enum result value
  */
 inline fun <reified T> String?.toEnumOrDefault(): T? where T : EnumValue, T : Enum<T> {
-    if (this == null) {
-        return null
-    }
-
-    return try {
-        enumValues<T>().firstOrNull { it.value.equals(this, true) }
-    } catch (e: IllegalArgumentException) {
-        null
+    this.let {
+        return try {
+            enumValues<T>().firstOrNull { it.value.equals(this, true) }
+        } catch (e: IllegalArgumentException) {
+            null
+        }
     }
 }
