@@ -16,3 +16,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Sample"
 include(":app")
+include(":common:base")
+include(":common:fundamental")
+include(":common:component")
