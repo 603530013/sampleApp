@@ -30,12 +30,13 @@ internal inline infix fun <reified T> Map<String, Any?>?.hasOrNull(name: String)
 
 @Suppress("SwallowedException")
 internal inline fun <reified T> Map<String, Any?>?.has(name: String, optional: Boolean): T? =
-    if (optional) try {
-        this has name
-    } catch (e: MiddleWareError) {
-        throw e
-    }
-    else {
+    if (optional) {
+        try {
+            this has name
+        } catch (e: MiddleWareError) {
+            throw e
+        }
+    } else {
         this has name
     }
 
