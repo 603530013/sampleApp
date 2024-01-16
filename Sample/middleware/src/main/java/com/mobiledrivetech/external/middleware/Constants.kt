@@ -25,6 +25,10 @@ internal object Constants {
         }
     }
 
+    internal object Output {
+        const val TEST = "test"
+    }
+
     const val PARAMS_KEY_CREDENTIAL = "credential"
     const val PARAMS_KEY_PROFILE = "profile"
     const val PARAMS_KEY_GOOGLE_API_KEY = "googleApiKey"
