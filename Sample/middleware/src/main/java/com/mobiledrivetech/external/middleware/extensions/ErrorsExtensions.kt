@@ -1,6 +1,6 @@
 package com.mobiledrivetech.external.middleware.extensions
 
-import android.util.Log
+import com.mobiledrivetech.external.middleware.Constants
 import com.mobiledrivetech.external.middleware.MiddleWareError
 import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
 
@@ -10,22 +10,22 @@ import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLo
  * @return Map<String, *>: if input is null we return empty map
  */
 fun MiddleWareError?.asMap(): Map<String, Any> {
-    Log.v("", "$this")
+    MDLog.debug("$this")
 
     val result = this?.let { error ->
         hashMapOf<String, Any>().apply {
-            this["code"] = error.code
-            this["label"] = error.message ?: ""
+            this[Constants.PARAMS_KEY_CODE] = error.code
+            this[Constants.PARAMS_KEY_LABEL] = error.message ?: ""
             subError?.let {
-                this["subCode"] = hashMapOf<String, Any>()
+                this[Constants.PARAMS_KEY_SUB_CODE] = hashMapOf<String, Any>()
                     .apply {
-                        this@apply["code"] = subError.status
-                        this@apply["label"] = subError.body
+                        this@apply[Constants.PARAMS_KEY_CODE] = subError.status
+                        this@apply[Constants.PARAMS_KEY_LABEL] = subError.body
                     }
             }
 
             info?.let {
-                this["info"] = it
+                this[Constants.PARAMS_KEY_INFO] = it
             }
         }
     } ?: mapOf()

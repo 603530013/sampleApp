@@ -30,25 +30,25 @@ internal inline infix fun <reified T> Map<String, Any?>?.hasOrNull(name: String)
 
 @Suppress("SwallowedException")
 internal inline fun <reified T> Map<String, Any?>?.has(name: String, optional: Boolean): T? =
-    when (optional) {
-        true -> try {
+    if (optional) {
+        try {
             this has name
         } catch (e: MiddleWareError) {
             throw e
         }
-
-        else -> this has name
+    } else {
+        this has name
     }
 
 @Throws(MiddleWareError::class)
 internal inline infix fun <reified T> Map<String, Any?>?.hasEnum(name: String): T where T : EnumValue, T : Enum<T> {
     val value: String = this has name
-    return value.toEnumOrDefault<T>() ?: throw MiddleWareFoundationError.invalidParameter(name)
+    return value.toEnumOrDefault() ?: throw MiddleWareFoundationError.invalidParameter(name)
 }
 
 internal inline infix fun <reified T> Map<String, Any?>?.hasEnumNullable(name: String): T? where T : EnumValue, T : Enum<T> {
     val value: String? = this hasOrNull name
-    return value?.toEnumOrDefault<T>()
+    return value?.toEnumOrDefault()
 }
 
 internal inline fun <reified T> Map<String, Any?>?.hasEnum(
@@ -56,7 +56,7 @@ internal inline fun <reified T> Map<String, Any?>?.hasEnum(
     fallback: T
 ): T where T : EnumValue, T : Enum<T> {
     val value: String? = this hasOrNull name
-    return value?.toEnumOrDefault<T>() ?: fallback
+    return value?.toEnumOrDefault() ?: fallback
 }
 
 /**

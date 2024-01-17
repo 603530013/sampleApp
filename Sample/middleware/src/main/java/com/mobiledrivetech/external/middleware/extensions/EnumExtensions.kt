@@ -17,12 +17,11 @@ interface EnumValue {
  * @receiver String? : the input value
  * @return T? : the Enum result value
  */
-inline fun <reified T> String?.toEnumOrDefault(): T? where T : EnumValue, T : Enum<T> {
+inline fun <reified T> String?.toEnumOrDefault(): T? where T : EnumValue, T : Enum<T> =
     this.let {
-        return try {
+        try {
             enumValues<T>().firstOrNull { it.value.equals(this, true) }
         } catch (e: IllegalArgumentException) {
             null
         }
     }
-}

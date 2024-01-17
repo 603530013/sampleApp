@@ -1,6 +1,5 @@
 package com.mobiledrivetech.external.middleware.command
 
-import android.util.Log
 import androidx.annotation.VisibleForTesting
 import com.mobiledrivetech.external.middleware.Constants
 import com.mobiledrivetech.external.middleware.MiddleWareError
@@ -11,6 +10,7 @@ import com.mobiledrivetech.external.middleware.extensions.asMap
 import com.mobiledrivetech.external.middleware.extensions.handleResult
 import com.mobiledrivetech.external.middleware.extensions.has
 import com.mobiledrivetech.external.middleware.foundation.commandManager.Command
+import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
 import com.mobiledrivetech.external.middleware.util.MiddleWareFoundationError
 
 internal abstract class BaseCommand : Command() {
@@ -42,7 +42,7 @@ internal abstract class BaseCommand : Command() {
                 }
             )
         } catch (e: MiddleWareError) {
-            Log.w("", e)
+            MDLog.warning(e.toString())
             failure(e.asMap())
             callback()
         }

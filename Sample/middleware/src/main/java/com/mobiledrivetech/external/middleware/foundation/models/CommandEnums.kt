@@ -14,9 +14,7 @@ sealed class CommandType(val type: String) {
     object Unsubscribe : CommandType("UNSUBSCRIBE")
     object Unknown : CommandType("unknown")
 
-    override fun toString(): String {
-        return this.javaClass.simpleName + "($type)"
-    }
+    override fun toString(): String = this.javaClass.simpleName + "($type)"
 
     companion object {
         private val map by lazy {
@@ -36,15 +34,9 @@ open class CommandName(name: String) {
     var name: String? = name
         private set
 
-    override fun toString(): String {
-        return name ?: ""
-    }
+    override fun toString(): String = name ?: ""
 
-    override fun equals(other: Any?): Boolean {
-        return name == (other as CommandName).name
-    }
+    override fun equals(other: Any?): Boolean = name == (other as CommandName).name
 
-    override fun hashCode(): Int {
-        return name?.hashCode() ?: 0
-    }
+    override fun hashCode(): Int = name?.hashCode() ?: 0
 }

@@ -15,6 +15,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Sample"
+include(":app")
 include(":middleware")
 include(":common:base")
 include(":common:fundamental")

@@ -6,7 +6,11 @@ import com.mobiledrivetech.external.middleware.util.MiddleWareFoundationError
 
 
 fun String.hide() =
-    this.replaceRange(startIndex = (this.length / 2), endIndex = this.length, replacement = "★".repeat(kotlin.math.abs(this.length - ((this.length / 2)))))
+    this.replaceRange(
+        startIndex = (this.length / 2),
+        endIndex = this.length,
+        replacement = "★".repeat(kotlin.math.abs(this.length - ((this.length / 2))))
+    )
 
 @Suppress("TooGenericExceptionCaught", "SwallowedException")
 internal inline fun <reified T> T.asJson(): String = try {
@@ -23,13 +27,10 @@ internal inline fun <reified T> T.asJson(): String = try {
  * @receiver String: any nullable string as input
  * @return Map<String, Any?>: return empty map if the input is not json data
  */
-internal fun String?.asMap(): Map<String, Any?> = when (isNullOrBlank()) {
-    true -> mapOf()
-
-    else -> try {
+internal fun String?.asMap(): Map<String, Any?> =
+    if (isNullOrBlank()) mapOf() else try {
         val type = object : TypeToken<Map<String, Any?>>() {}.type
         gson.fromJson(this, type)
     } catch (ex: JsonParseException) {
         mapOf()
     }
-}
