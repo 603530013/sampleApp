@@ -1,4 +1,4 @@
-package com.mobiledrivetech.external.core.data.model
+package com.mobiledrivetech.external.sample.data.model
 
 const val PARAMS_KEY_ACTION_TYPE = "actionType"
 

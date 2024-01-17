@@ -1,4 +1,4 @@
-package com.mobiledrivetech.external.core.domain.repository
+package com.mobiledrivetech.external.sample.domain.repository
 
 interface TestRepository {
     suspend fun initialize(parameter: Map<String, Any>?): Map<String, Any?>

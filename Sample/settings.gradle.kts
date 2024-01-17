@@ -20,6 +20,5 @@ include(
     ":middleware",
     ":common:base",
     ":common:fundamental",
-    ":common:component",
-    ":core"
+    ":common:component"
 )

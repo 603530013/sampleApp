@@ -1,7 +1,7 @@
-package com.mobiledrivetech.external.core.data.repository
+package com.mobiledrivetech.external.sample.data.repository
 
-import com.mobiledrivetech.external.core.data.datasource.TestDataSource
-import com.mobiledrivetech.external.core.domain.repository.TestRepository
+import com.mobiledrivetech.external.sample.data.datasource.TestDataSource
+import com.mobiledrivetech.external.sample.domain.repository.TestRepository
 
 class TestRepositoryImpl(
     private val reUseDataSource: TestDataSource

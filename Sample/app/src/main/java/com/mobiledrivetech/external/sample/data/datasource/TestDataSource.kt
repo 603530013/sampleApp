@@ -1,4 +1,4 @@
-package com.mobiledrivetech.external.core.data.datasource
+package com.mobiledrivetech.external.sample.data.datasource
 
 interface TestDataSource {
     /**

@@ -1,8 +1,8 @@
-package com.mobiledrivetech.external.core.providers
+package com.mobiledrivetech.external.sample.providers
 
-import com.mobiledrivetech.external.core.data.model.ApiName
 import com.mobiledrivetech.external.middleware.IMiddleware
 import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
+import com.mobiledrivetech.external.sample.data.model.ApiName
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
@@ -33,7 +33,10 @@ class FacadeDataProviderImp(private val middleware: IMiddleware) : FacadeDataPro
             }
         }
 
-    private suspend fun get(api: ApiName, parameter: Map<String, Any>?): Map<String, Any?> =
+    private suspend fun get(
+        api: ApiName,
+        parameter: Map<String, Any>?
+    ): Map<String, Any?> =
         suspendCancellableCoroutine { continuation ->
             middleware.get(api.name, parameter ?: emptyMap()) { result ->
                 MDLog.inform(
@@ -44,7 +47,10 @@ class FacadeDataProviderImp(private val middleware: IMiddleware) : FacadeDataPro
             }
         }
 
-    private suspend fun set(api: ApiName, parameter: Map<String, Any>?): Map<String, Any?> =
+    private suspend fun set(
+        api: ApiName,
+        parameter: Map<String, Any>?
+    ): Map<String, Any?> =
         suspendCancellableCoroutine { continuation ->
             middleware.set(api.name, parameter ?: emptyMap()) { result ->
                 MDLog.inform(

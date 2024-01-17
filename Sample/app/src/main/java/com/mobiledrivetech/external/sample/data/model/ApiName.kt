@@ -1,4 +1,4 @@
-package com.mobiledrivetech.external.core.data.model
+package com.mobiledrivetech.external.sample.data.model
 
 import androidx.annotation.Keep
 

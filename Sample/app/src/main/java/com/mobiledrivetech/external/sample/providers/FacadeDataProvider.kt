@@ -1,6 +1,6 @@
-package com.mobiledrivetech.external.core.providers
+package com.mobiledrivetech.external.sample.providers
 
-import com.mobiledrivetech.external.core.data.model.ApiName
+import com.mobiledrivetech.external.sample.data.model.ApiName
 
 interface FacadeDataProvider {
     suspend fun fetch(

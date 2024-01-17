@@ -1,6 +1,6 @@
-package com.mobiledrivetech.external.core.domain.usecase
+package com.mobiledrivetech.external.sample.domain.usecase
 
-import com.mobiledrivetech.external.core.domain.repository.TestRepository
+import com.mobiledrivetech.external.sample.domain.repository.TestRepository
 
 interface GetTestCommandResultUC {
     suspend operator fun invoke(): Result<String>
