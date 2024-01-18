@@ -15,4 +15,6 @@ val runningTestCoverage = if (project.hasProperty("coverage")) {
 
 dependencies {
     implementation(project(":middleware"))
+    implementation(libs.koin)
+    implementation(libs.koin.scope)
 }
