@@ -32,6 +32,7 @@ androidGradlePlugin = "7.4.1"
 
 #kotlinGradlePlugin : Gradle plugin
 kotlinGradlePlugin = "1.7.0"
+kotlinParcelize = "1.8.10"
 
 
 [libraries]
@@ -65,6 +66,7 @@ navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", ver
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "ktx" }
+kotlin-parcelize = { id = 'org.jetbrains.kotlin.plugin.parcelize', version.ref = "kotlinParcelize" }
 
 rootcoverage = { id = "nl.neotech.plugin.rootcoverage", version.ref = "coverage" }
 
