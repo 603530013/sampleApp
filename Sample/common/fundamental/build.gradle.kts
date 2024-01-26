@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.mobiledrivetech.external.common.fundamental"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 24

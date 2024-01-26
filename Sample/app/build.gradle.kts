@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.kotlin.parcelize)
     id("plugins.app-build-config")
     id("plugins.library-build-config")
+    id("kotlin-kapt")
 }
 
 val runningTestCoverage = if (project.hasProperty("coverage")) {
@@ -15,7 +16,22 @@ val runningTestCoverage = if (project.hasProperty("coverage")) {
 }
 
 dependencies {
+    implementation(project(":common:base"))
     implementation(project(":middleware"))
     implementation(libs.koin)
     implementation(libs.koin.scope)
+}
+
+android {
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }

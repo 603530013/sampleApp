@@ -1,18 +1,18 @@
 package com.mobiledrivetech.external.middleware
 
-internal object Constants {
+object Constants {
 
     const val API_PREFIX = "mobiledrivetech.middleware"
     const val SERVICE_NAME = "middleware"
     const val COMPONENT_NAME = "MiddlewareComponent"
     const val APIS = "apis"
 
-    internal object API {
+    object API {
         const val CONFIGURATION = "configuration"
         const val TEST = "test"
     }
 
-    internal object Input {
+    object Input {
 
         const val ACTION_TYPE = "actionType"
         const val ACTION = "action"
@@ -25,13 +25,11 @@ internal object Constants {
         }
     }
 
-    internal object Output {
+    object Output {
         const val TEST = "test"
     }
 
-    const val PARAMS_KEY_CREDENTIAL = "credential"
     const val PARAMS_KEY_PROFILE = "profile"
-    const val PARAMS_KEY_GOOGLE_API_KEY = "googleApiKey"
     const val PARAMS_KEY_CODE = "code"
     const val PARAMS_KEY_LABEL = "label"
     const val PARAMS_KEY_SUB_CODE = "subCode"

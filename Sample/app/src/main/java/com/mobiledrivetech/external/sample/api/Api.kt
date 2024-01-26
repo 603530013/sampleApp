@@ -9,4 +9,4 @@ class Api(
     val name: String,
     val getInput: @RawValue List<Input>? = null,
     val setInput: @RawValue List<Input>? = null
-): Parcelable
+) : Parcelable

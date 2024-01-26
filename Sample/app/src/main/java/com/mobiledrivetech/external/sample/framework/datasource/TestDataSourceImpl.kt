@@ -7,6 +7,7 @@ import com.mobiledrivetech.external.sample.data.model.PARAMS_KEY_ACTION_TYPE
 import com.mobiledrivetech.external.sample.data.model.PARAMS_VALUE_TEST_ACTION
 import com.mobiledrivetech.external.sample.data.model.RESULT_KEY
 import com.mobiledrivetech.external.sample.data.model.RESULT_KEY_TEST
+import com.mobiledrivetech.external.sample.domain.models.Commands
 import com.mobiledrivetech.external.sample.providers.FacadeDataProvider
 
 class TestDataSourceImpl(private val facadeDataProvider: FacadeDataProvider) : TestDataSource {
@@ -31,5 +32,15 @@ class TestDataSourceImpl(private val facadeDataProvider: FacadeDataProvider) : T
             MDLog.debug("getTestCommandResult $it")
             val result = it[RESULT_KEY] as? Map<*, *>
             Result.success(result?.get(RESULT_KEY_TEST) as String)
+        }
+
+    override suspend fun executeCommand(command: Commands): Result<Map<String, Any?>> =
+        facadeDataProvider.fetch(
+            api = command.commandName,
+            method = command.commandType,
+            parameter = command.commandParams
+        ).let {
+            MDLog.debug("executeCommand $it")
+            Result.success(it)
         }
 }

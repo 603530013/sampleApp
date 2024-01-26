@@ -11,12 +11,8 @@ import java.util.Locale
 internal interface ConfigurationManager {
     val environment: Environment
     val brand: Brand
-    val brandCode: String
-    val googleApiKey: String
     val locale: Locale
     val market: Market
-    val siteCode: String
-    val languagePath: String
 
     fun initialize(
         component: MiddlewareComponent,

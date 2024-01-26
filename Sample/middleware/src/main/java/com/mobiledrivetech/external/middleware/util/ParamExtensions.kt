@@ -58,13 +58,3 @@ internal inline fun <reified T> Map<String, Any?>?.hasEnum(
     val value: String? = this hasOrNull name
     return value?.toEnumOrDefault() ?: fallback
 }
-
-/**
- * Returns a map containing all key-value pairs with values matching the given predicate.
- *
- * The returned map preserves the entry iteration order of the original map.
- */
-@Suppress("UNCHECKED_CAST")
-internal fun <K, V> Map<out K, V?>.filterNotNull(): Map<K, V> =
-    filterKeys { key -> ((key as? String)?.isNotBlank() ?: key) != null }
-        .filterValues { value -> (value as? String)?.isNotBlank() ?: (value != null) } as Map<K, V>

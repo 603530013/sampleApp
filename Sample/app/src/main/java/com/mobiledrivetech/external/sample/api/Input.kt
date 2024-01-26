@@ -14,5 +14,4 @@ sealed class Input(open val name: String) : Parcelable {
         val method: FacadeDataProvider.Method,
         val parameter: @RawValue Map<String, Any>?
     ) : Input(name)
-
 }
