@@ -36,13 +36,21 @@ android {
 dependencies {
     implementation(project(":common:base"))
 
-    implementation(libs.androidx.core.ktx)
-    api(libs.koin.fragment)
-    api(libs.koin.viewmodel)
-    implementation(libs.material)
+    implementation(libs.koin.fragment)
+    implementation(libs.koin.viewmodel)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.assert.j)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.arch.core.testing)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.android.test.core)
+    androidTestImplementation(libs.android.test.runner)
+    androidTestImplementation(libs.android.test.rules)
 }

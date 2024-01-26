@@ -6,7 +6,13 @@ gson = "2.9.0"
 #Library
 ktx = "1.7.0"
 junit = "4.13.2"
+mockk = "1.13.2"
+test = "1.4.0"
+coroutine = "1.6.4"
+assert-j = "3.23.1"
 androidx-test-ext-junit = "1.1.5"
+robolectric = "4.5.1"
+arch-core = "2.1.0"
 espresso-core = "3.5.1"
 appcompat = "1.6.1"
 material = "1.6.1"
@@ -37,9 +43,23 @@ kotlinParcelize = "1.8.10"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+mockk = {group = "io.mockk", name = "mockk", version.ref ="mockk"}
+assert-j = {group = "org.assertj", name = "assertj-core", version.ref ="assert-j"}
+robolectric = {group = "org.robolectric", name = "robolectric", version.ref ="robolectric"}
+arch-core-testing = {group = "androidx.arch.core", name = "core-testing", version.ref ="arch-core"}
+
+android-test-core = { group = "androidx.test", name = "core", version.ref = "test" }
+android-test-runner = { group = "androidx.test", name = "runner", version.ref = "test" }
+android-test-rules = { group = "androidx.test", name = "rules", version.ref = "test" }
+
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutine" }
+coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutine" }
+
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
@@ -58,6 +78,7 @@ koin-scope = { group = "io.insert-koin", name = "koin-androidx-scope", version.r
 koin-fragment = { group = "io.insert-koin", name = "koin-androidx-fragment", version.ref = "koin" }
 koin-viewmodel = { group = "io.insert-koin", name = "koin-androidx-viewmodel", version.ref = "koin" }
 koin-ext = { group = "io.insert-koin", name = "koin-androidx-ext", version.ref = "koin" }
+koin-test = { group = "io.insert-koin", name = 'koin-test', version.ref = "koin" }
 
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }

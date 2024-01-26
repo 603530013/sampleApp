@@ -34,9 +34,18 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.material)
+    implementation(project(":common:base"))
+
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.assert.j)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.arch.core.testing)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.android.test.core)
+    androidTestImplementation(libs.android.test.runner)
+    androidTestImplementation(libs.android.test.rules)
 }
