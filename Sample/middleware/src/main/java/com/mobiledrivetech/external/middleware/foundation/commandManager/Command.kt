@@ -1,7 +1,7 @@
 package com.mobiledrivetech.external.middleware.foundation.commandManager
 
 import android.os.Build
-import com.google.gson.Gson
+import androidx.annotation.VisibleForTesting
 import com.google.gson.annotations.Expose
 import com.mobiledrivetech.external.middleware.Constants
 import com.mobiledrivetech.external.middleware.extensions.sort
@@ -14,7 +14,6 @@ import com.mobiledrivetech.external.middleware.util.DispatcherProvider
 import java.lang.ref.WeakReference
 import java.util.Locale
 import java.util.UUID
-
 
 open class Command(
     @Expose var transactionId: String = "${UUID.randomUUID()}-${System.currentTimeMillis() / 1000}"
@@ -82,7 +81,8 @@ open class Command(
     private var context: Map<String, Any?>? = null
 
     @Expose
-    private var callback: ((Map<String, Any?>) -> Unit)? = null
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    internal var callback: ((Map<String, Any?>) -> Unit)? = null
 
 
     @Expose
@@ -126,12 +126,11 @@ open class Command(
     }
 
     open suspend fun execute(callback: () -> Unit) {
+        MDLog.debug("$callback")
     }
 
     internal suspend fun execute(dispatcher: DispatcherProvider, callback: () -> Unit) =
         execute(callback)
-
-    fun deserialize(jsonString: String): Command = Gson().fromJson(jsonString, this::class.java)
 
     private fun fillContext(): Map<String, Any?> = mapOf(
         Pair(Constants.CONTEXT_KEY_PHONE_MODEL, Build.MODEL),

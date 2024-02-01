@@ -1,7 +1,5 @@
 package com.mobiledrivetech.external.middleware.foundation.genericComponent
 
-import com.mobiledrivetech.external.middleware.MiddleWareError
-
 interface GenericComponentInterface {
 
     /**
@@ -60,11 +58,4 @@ interface GenericComponentInterface {
      * @param callback callback to be invoked on response
      */
     fun unsubscribe(api: String, callback: (Map<String, Any?>) -> Unit): String
-
-    /**
-     * Configure component
-     * @param parameters: map<String, Any?> contains the parameters
-     */
-    @Throws(MiddleWareError::class)
-    fun configure(parameters: Map<String, Any>)
 }

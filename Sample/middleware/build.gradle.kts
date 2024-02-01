@@ -34,6 +34,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.appcompat)
     implementation(libs.gson)
     implementation(libs.kotlin.reflect)
 

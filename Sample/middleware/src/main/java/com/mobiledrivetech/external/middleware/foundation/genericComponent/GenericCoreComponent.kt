@@ -1,29 +1,19 @@
 package com.mobiledrivetech.external.middleware.foundation.genericComponent
 
 import com.mobiledrivetech.external.middleware.Constants.APIS
-import com.mobiledrivetech.external.middleware.MiddleWareError
 import com.mobiledrivetech.external.middleware.foundation.commandManager.CommandManager
 import com.mobiledrivetech.external.middleware.foundation.commandManager.ICommandManager
 import com.mobiledrivetech.external.middleware.foundation.models.CommandName
 import com.mobiledrivetech.external.middleware.foundation.models.CommandType
 import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
 
 open class GenericCoreComponent : GenericComponentInterface {
-
-    private var uuid: String? = null
 
     open var name: String? = "GenericCoreComponent"
     open var version: String? = ""
     open var serviceName: String? = ""
 
     var commandManager: ICommandManager = CommandManager()
-
-    private val job = SupervisorJob()
-
-    private val scope = CoroutineScope(Dispatchers.Default + job)
 
     override fun initialize(
         parameters: Map<String, Any>,
@@ -98,9 +88,5 @@ open class GenericCoreComponent : GenericComponentInterface {
             parameters = null,
             callback = callback
         )
-    }
-
-    @Throws(MiddleWareError::class)
-    override fun configure(parameters: Map<String, Any>) {
     }
 }
