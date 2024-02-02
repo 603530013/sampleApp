@@ -1,10 +1,10 @@
 package com.mobiledrivetech.external.middleware.command
 
 import com.mobiledrivetech.external.middleware.Constants
-import com.mobiledrivetech.external.middleware.MiddleWareError
 import com.mobiledrivetech.external.middleware.MiddlewareComponent
 import com.mobiledrivetech.external.middleware.executor.BaseLocalExecutor
 import com.mobiledrivetech.external.middleware.manager.ConfigurationManager
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
 import com.mobiledrivetech.external.middleware.model.Response
 import com.mobiledrivetech.external.middleware.util.MiddleWareFoundationError
 import io.mockk.clearAllMocks

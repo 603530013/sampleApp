@@ -20,6 +20,11 @@ dependencies {
     implementation(project(":middleware"))
     implementation(libs.koin)
     implementation(libs.koin.scope)
+
+    testImplementation(libs.mockk)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.arch.core.testing)
 }
 
 android {

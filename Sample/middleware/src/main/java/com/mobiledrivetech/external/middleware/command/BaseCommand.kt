@@ -2,7 +2,6 @@ package com.mobiledrivetech.external.middleware.command
 
 import androidx.annotation.VisibleForTesting
 import com.mobiledrivetech.external.middleware.Constants
-import com.mobiledrivetech.external.middleware.MiddleWareError
 import com.mobiledrivetech.external.middleware.MiddlewareComponent
 import com.mobiledrivetech.external.middleware.executor.BaseLocalExecutor
 import com.mobiledrivetech.external.middleware.extensions.asJson
@@ -11,6 +10,7 @@ import com.mobiledrivetech.external.middleware.extensions.handleResult
 import com.mobiledrivetech.external.middleware.extensions.has
 import com.mobiledrivetech.external.middleware.foundation.commandManager.Command
 import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
 import com.mobiledrivetech.external.middleware.util.MiddleWareFoundationError
 
 internal abstract class BaseCommand : Command() {

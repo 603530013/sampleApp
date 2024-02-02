@@ -16,13 +16,6 @@ object Constants {
 
         const val ACTION_TYPE = "actionType"
         const val ACTION = "action"
-
-        object Configuration {
-
-            const val LOCALE = "locale"
-            const val SITE_CODE = "siteCode"
-            const val LANGUAGE_PATH = "languagePath"
-        }
     }
 
     object Output {
@@ -46,6 +39,7 @@ object Constants {
     const val CONTEXT_KEY_PHONE_MODEL = "phoneModel"
     const val CONTEXT_KEY_OS_VERSION = "osVersion"
     const val CONTEXT_KEY_MARKET = "market"
+    const val CONTEXT_KEY_LOCALE = "locale"
 
     const val KEY_TRANSACTION_ID = "transactionId"
     const val KEY_NAME = "name"

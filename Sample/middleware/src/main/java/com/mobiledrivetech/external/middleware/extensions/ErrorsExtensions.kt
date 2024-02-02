@@ -1,8 +1,8 @@
 package com.mobiledrivetech.external.middleware.extensions
 
 import com.mobiledrivetech.external.middleware.Constants
-import com.mobiledrivetech.external.middleware.MiddleWareError
 import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
 
 /**
  * Transform [MiddleWareError] to [Map]

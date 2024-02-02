@@ -1,21 +1,9 @@
 package com.mobiledrivetech.external.middleware.util
 
-import com.mobiledrivetech.external.middleware.MiddleWareError
-import com.mobiledrivetech.external.middleware.SubError
-import com.mobiledrivetech.external.middleware.util.ErrorCode.Companion.paramsNotSet
-
-open class ErrorCode {
-
-    companion object {
-        private const val ErrorStart = 2000
-        const val unknownError = ErrorStart + 1
-        const val facadeNotInitialized = ErrorStart + 2
-        const val paramsNotSet = ErrorStart + 3
-        const val missingParams = ErrorStart + 4
-        const val invalidParams = ErrorStart + 5
-        const val componentNotConfigured = ErrorStart + 6
-    }
-}
+import com.mobiledrivetech.external.middleware.model.ErrorCode
+import com.mobiledrivetech.external.middleware.model.ErrorCode.Companion.paramsNotSet
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
+import com.mobiledrivetech.external.middleware.model.SubError
 
 open class ErrorMessage {
 
@@ -48,7 +36,6 @@ object MiddleWareFoundationError {
         ErrorCode.invalidParams, ErrorMessage.invalidParams(name)
     )
 
-
     val unknownError =
         MiddleWareErrorFactory.create(ErrorCode.unknownError, ErrorMessage.unknownError)
 
@@ -68,5 +55,4 @@ object MiddleWareFoundationError {
     fun componentNotConfigured(name: String) = MiddleWareErrorFactory.create(
         ErrorCode.componentNotConfigured, ErrorMessage.componentNotConfigured(name)
     )
-
 }

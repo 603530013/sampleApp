@@ -2,8 +2,8 @@ package com.mobiledrivetech.external.middleware.extensions
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.mobiledrivetech.external.middleware.MiddleWareError
-import com.mobiledrivetech.external.middleware.util.ErrorCode
+import com.mobiledrivetech.external.middleware.model.ErrorCode
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
 import com.mobiledrivetech.external.middleware.util.ErrorMessage
 import com.mobiledrivetech.external.middleware.util.MiddleWareErrorFactory
 
@@ -49,13 +49,10 @@ inline infix fun <reified T> Map<String, Any?>?.has(name: String): T =
         this.isEmpty() -> throw name.toMissingParamError()
         !this.containsKey(name) -> throw name.toMissingParamError()
         this[name] !is T -> throw name.toInvalidParamError()
-        (this[name] is String) && (this[name] as String).isBlank() ->
-            throw name.toMissingParamError()
-
+        (this[name] is String) && (this[name] as String).isBlank() -> throw name.toMissingParamError()
         this[name] is T -> this[name] as T
         else -> throw name.toMissingParamError()
     }
-
 
 fun String.toMissingParamError() = MiddleWareErrorFactory.create(
     ErrorCode.missingParams, ErrorMessage.missingParams(this)

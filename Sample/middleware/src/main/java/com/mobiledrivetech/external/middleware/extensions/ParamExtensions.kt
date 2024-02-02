@@ -1,10 +1,9 @@
-package com.mobiledrivetech.external.middleware.util
+package com.mobiledrivetech.external.middleware.extensions
 
-import com.mobiledrivetech.external.middleware.MiddleWareError
-import com.mobiledrivetech.external.middleware.extensions.EnumValue
-import com.mobiledrivetech.external.middleware.extensions.has
-import com.mobiledrivetech.external.middleware.extensions.toEnumOrDefault
 import com.mobiledrivetech.external.middleware.foundation.models.Environment
+import com.mobiledrivetech.external.middleware.model.ErrorCode
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
+import com.mobiledrivetech.external.middleware.util.MiddleWareFoundationError
 
 @Throws(MiddleWareError::class)
 internal infix fun Map<String, Any?>?.hasEnvironment(name: String): Environment =

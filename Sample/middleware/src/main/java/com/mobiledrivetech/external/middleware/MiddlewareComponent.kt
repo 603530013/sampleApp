@@ -1,5 +1,6 @@
 package com.mobiledrivetech.external.middleware
 
+import androidx.annotation.VisibleForTesting
 import com.mobiledrivetech.external.middleware.Constants.KEY_ERROR
 import com.mobiledrivetech.external.middleware.Constants.KEY_STATUS
 import com.mobiledrivetech.external.middleware.command.configuration.SetConfigurationCommand
@@ -10,16 +11,14 @@ import com.mobiledrivetech.external.middleware.foundation.genericComponent.Gener
 import com.mobiledrivetech.external.middleware.foundation.models.CommandName
 import com.mobiledrivetech.external.middleware.foundation.models.CommandStatus
 import com.mobiledrivetech.external.middleware.foundation.models.CommandType
-import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
 import com.mobiledrivetech.external.middleware.manager.ConfigurationManager
 import com.mobiledrivetech.external.middleware.manager.ConfigurationManagerImp
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
 import com.mobiledrivetech.external.middleware.model.configuration.ConfigurationInput
 
 internal class MiddlewareComponent : GenericCoreComponent() {
-
     override var serviceName: String? = Constants.SERVICE_NAME
     override var name: String? = Constants.COMPONENT_NAME
-
     val configurationManager: ConfigurationManager = ConfigurationManagerImp()
 
     init {
@@ -29,7 +28,8 @@ internal class MiddlewareComponent : GenericCoreComponent() {
         }
     }
 
-    private fun initConfigureApi(commandManager: ICommandManager) {
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    internal fun initConfigureApi(commandManager: ICommandManager) {
         val configureCommand = CommandName("${Constants.API_PREFIX}.${Constants.API.CONFIGURATION}")
         commandManager.fillCommandMapper(
             SetConfigurationCommand(),
@@ -38,7 +38,8 @@ internal class MiddlewareComponent : GenericCoreComponent() {
         )
     }
 
-    private fun initTestApi(commandManager: ICommandManager) {
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    internal fun initTestApi(commandManager: ICommandManager) {
         val configureCommand = CommandName("${Constants.API_PREFIX}.${Constants.API.TEST}")
         commandManager.fillCommandMapper(
             TestCommandGet(),
@@ -51,19 +52,13 @@ internal class MiddlewareComponent : GenericCoreComponent() {
         parameters: Map<String, Any>,
         callback: (Map<String, Any>) -> Unit
     ) {
-        try {
-            //set configuration if needed
-            val config = ConfigurationInput()
-            configurationManager.initialize(component = this, config = config)
-
-        } catch (ex: MiddleWareError) {
-            MDLog.warning(ex.toString())
-            callback(failure(ex))
-            return
-        }
+        //set configuration if needed
+        val config = ConfigurationInput()
+        configurationManager.initialize(component = this, config = config)
         super.initialize(parameters, callback)
     }
 
-    private fun failure(ex: MiddleWareError): Map<String, Any> =
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    internal fun failure(ex: MiddleWareError): Map<String, Any> =
         mapOf(KEY_STATUS to CommandStatus.FAILED, KEY_ERROR to ex.asMap())
 }

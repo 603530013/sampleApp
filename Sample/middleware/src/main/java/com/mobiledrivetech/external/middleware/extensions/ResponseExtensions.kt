@@ -1,6 +1,6 @@
 package com.mobiledrivetech.external.middleware.extensions
 
-import com.mobiledrivetech.external.middleware.MiddleWareError
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
 import com.mobiledrivetech.external.middleware.model.Response
 import com.mobiledrivetech.external.middleware.util.MiddleWareFoundationError
 
@@ -46,11 +46,4 @@ internal inline fun <T, R> Response<T>.map(
     is Response.Success -> Response.Success(transformSuccess(this.response))
     is Response.Failure -> transformFailure(this.error) ?: this
 }
-
-@Suppress("UNCHECKED_CAST")
-internal inline fun <T, R> Response<T>.transform(transform: (T) -> Response<R>): Response<R> =
-    when (this) {
-        is Response.Success -> transform(this.response)
-        else -> this as Response<R>
-    }
 

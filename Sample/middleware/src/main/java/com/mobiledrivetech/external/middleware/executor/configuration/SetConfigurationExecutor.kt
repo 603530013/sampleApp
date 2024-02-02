@@ -3,15 +3,16 @@ package com.mobiledrivetech.external.middleware.executor.configuration
 import com.mobiledrivetech.external.middleware.Constants
 import com.mobiledrivetech.external.middleware.Constants.CONTEXT_KEY_BRAND
 import com.mobiledrivetech.external.middleware.Constants.CONTEXT_KEY_ENVIRONMENT
+import com.mobiledrivetech.external.middleware.Constants.CONTEXT_KEY_LOCALE
 import com.mobiledrivetech.external.middleware.command.BaseCommand
 import com.mobiledrivetech.external.middleware.executor.BaseLocalExecutor
+import com.mobiledrivetech.external.middleware.extensions.hasEnumNullable
+import com.mobiledrivetech.external.middleware.extensions.hasEnvironmentOrNull
+import com.mobiledrivetech.external.middleware.extensions.hasOrNull
 import com.mobiledrivetech.external.middleware.foundation.models.Brand
 import com.mobiledrivetech.external.middleware.foundation.models.Market
 import com.mobiledrivetech.external.middleware.model.Response
 import com.mobiledrivetech.external.middleware.model.configuration.ConfigurationInput
-import com.mobiledrivetech.external.middleware.util.hasEnumNullable
-import com.mobiledrivetech.external.middleware.util.hasEnvironmentOrNull
-import com.mobiledrivetech.external.middleware.util.hasOrNull
 import java.util.Locale
 
 internal class SetConfigurationExecutor(command: BaseCommand) :
@@ -24,7 +25,7 @@ internal class SetConfigurationExecutor(command: BaseCommand) :
         val brand: Brand? = profileMap.hasEnumNullable(CONTEXT_KEY_BRAND)
         var locale: Locale? = null
 
-        profileMap.hasOrNull<String>(Constants.Input.Configuration.LOCALE)
+        profileMap.hasOrNull<String>(CONTEXT_KEY_LOCALE)
             ?.takeIf { it.isNotBlank() }
             ?.let { locale = Locale.forLanguageTag(it) }
 

@@ -1,8 +1,5 @@
 package com.mobiledrivetech.external.middleware.extensions
 
-inline fun <reified T : Enum<T>> Array<T>.valueOf(value: String, ignoreCase: Boolean = true) =
-    enumValues<T>().asSequence().firstOrNull { it.name.equals(value, ignoreCase) }
-
 /**
  * interface to simplify extracting value from enum
  * @property value String

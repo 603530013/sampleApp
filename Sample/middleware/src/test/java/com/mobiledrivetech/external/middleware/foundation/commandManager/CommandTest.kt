@@ -5,7 +5,7 @@ import com.mobiledrivetech.external.middleware.foundation.models.CommandName
 import com.mobiledrivetech.external.middleware.foundation.models.CommandStatus
 import com.mobiledrivetech.external.middleware.foundation.models.CommandType
 import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
-import com.mobiledrivetech.external.middleware.util.ErrorCode
+import com.mobiledrivetech.external.middleware.model.ErrorCode
 import com.mobiledrivetech.external.middleware.util.ErrorMessage
 import com.mobiledrivetech.external.middleware.util.MiddleWareErrorFactory
 import io.mockk.clearAllMocks

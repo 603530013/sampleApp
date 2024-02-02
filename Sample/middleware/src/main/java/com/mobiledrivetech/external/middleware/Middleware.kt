@@ -9,18 +9,18 @@ class Middleware : IMiddleware {
         MiddlewareComponent()
     }
 
-    override fun get(
-        api: String,
-        parameters: Map<String, Any>?,
-        callback: (Map<String, Any?>) -> Unit
-    ): String = core.get(api, parameters, callback)
-
     override fun initialize(
         parameters: Map<String, Any>,
         callback: (Map<String, Any>) -> Unit
     ) = core.initialize(parameters, callback)
 
     override fun release() = core.release()
+
+    override fun get(
+        api: String,
+        parameters: Map<String, Any>?,
+        callback: (Map<String, Any?>) -> Unit
+    ): String = core.get(api, parameters, callback)
 
     override fun set(
         api: String,

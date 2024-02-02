@@ -1,10 +1,10 @@
 package com.mobiledrivetech.external.middleware.executor
 
 import androidx.annotation.VisibleForTesting
-import com.mobiledrivetech.external.middleware.MiddleWareError
 import com.mobiledrivetech.external.middleware.MiddlewareComponent
 import com.mobiledrivetech.external.middleware.command.BaseCommand
 import com.mobiledrivetech.external.middleware.manager.ConfigurationManager
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
 import com.mobiledrivetech.external.middleware.model.Response
 
 internal abstract class BaseLocalExecutor<P, out R> constructor(

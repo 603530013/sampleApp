@@ -1,4 +1,4 @@
-package com.mobiledrivetech.external.middleware
+package com.mobiledrivetech.external.middleware.model
 
 class MiddleWareError(val code: Int, override val message: String, val subError: SubError? = null) :
     Error(message, null, true, false) {

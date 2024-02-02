@@ -1,5 +1,6 @@
 package com.mobiledrivetech.external.sample.providers
 
+import androidx.annotation.VisibleForTesting
 import com.mobiledrivetech.external.middleware.IMiddleware
 import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
 import com.mobiledrivetech.external.sample.data.model.ApiName
@@ -22,7 +23,8 @@ class FacadeDataProviderImp(private val middleware: IMiddleware) : FacadeDataPro
         }
     }
 
-    private suspend fun initialize(parameter: Map<String, Any>?): Map<String, Any?> =
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    internal suspend fun initialize(parameter: Map<String, Any>?): Map<String, Any?> =
         suspendCancellableCoroutine { continuation ->
             middleware.initialize(parameter.orEmpty()) { result ->
                 MDLog.inform(
@@ -33,7 +35,8 @@ class FacadeDataProviderImp(private val middleware: IMiddleware) : FacadeDataPro
             }
         }
 
-    private suspend fun get(
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    internal suspend fun get(
         api: ApiName,
         parameter: Map<String, Any>?
     ): Map<String, Any?> =
@@ -47,7 +50,8 @@ class FacadeDataProviderImp(private val middleware: IMiddleware) : FacadeDataPro
             }
         }
 
-    private suspend fun set(
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    internal suspend fun set(
         api: ApiName,
         parameter: Map<String, Any>?
     ): Map<String, Any?> =
@@ -61,7 +65,8 @@ class FacadeDataProviderImp(private val middleware: IMiddleware) : FacadeDataPro
             }
         }
 
-    private suspend fun release() = coroutineScope {
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    internal suspend fun release() = coroutineScope {
         MDLog.inform(tag = "middleware test", message = "release")
         middleware.release()
         emptyMap<String, Any?>()

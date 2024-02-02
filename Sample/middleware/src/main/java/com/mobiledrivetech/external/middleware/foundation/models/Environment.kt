@@ -1,6 +1,8 @@
 package com.mobiledrivetech.external.middleware.foundation.models
 
-enum class Environment {
-    DEV
+import com.mobiledrivetech.external.middleware.extensions.EnumValue
+
+enum class Environment(override val value: String) : EnumValue {
+    DEV(value = "DEV")
 }
 

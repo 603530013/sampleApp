@@ -1,13 +1,13 @@
 package com.mobiledrivetech.external.middleware.command
 
 import com.mobiledrivetech.external.middleware.Constants
-import com.mobiledrivetech.external.middleware.MiddleWareError
 import com.mobiledrivetech.external.middleware.MiddlewareComponent
 import com.mobiledrivetech.external.middleware.executor.BaseLocalExecutor
 import com.mobiledrivetech.external.middleware.foundation.genericComponent.GenericComponentInterface
 import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLog
+import com.mobiledrivetech.external.middleware.model.ErrorCode
+import com.mobiledrivetech.external.middleware.model.MiddleWareError
 import com.mobiledrivetech.external.middleware.model.Response
-import com.mobiledrivetech.external.middleware.util.ErrorCode
 import com.mobiledrivetech.external.middleware.util.ErrorMessage
 import com.mobiledrivetech.external.middleware.util.MiddleWareFoundationError
 import com.mobiledrivetech.external.middleware.utils.MockWeakReference

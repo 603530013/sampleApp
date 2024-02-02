@@ -1,5 +1,7 @@
 package com.mobiledrivetech.external.middleware.foundation.models
 
-enum class Market(val value: String) {
+import com.mobiledrivetech.external.middleware.extensions.EnumValue
+
+enum class Market(override val value: String) : EnumValue {
     NONE("none")
 }
