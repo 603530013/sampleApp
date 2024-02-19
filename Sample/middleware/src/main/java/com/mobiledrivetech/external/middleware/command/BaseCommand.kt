@@ -13,18 +13,38 @@ import com.mobiledrivetech.external.middleware.foundation.monitoring.logger.MDLo
 import com.mobiledrivetech.external.middleware.model.MiddleWareError
 import com.mobiledrivetech.external.middleware.util.MiddleWareFoundationError
 
+/**
+ * Base command which inherits from [Command]
+ */
 internal abstract class BaseCommand : Command() {
 
+    /**
+     * Get action type
+     *
+     * @return action type
+     * @throws MiddleWareError if action type is not found
+     */
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     internal val actionType: String
         @Throws(MiddleWareError::class)
         get() = parameters has Constants.Input.ACTION_TYPE
 
+    /**
+     * Get middleware component
+     *
+     * @return middleware component
+     * @throws MiddleWareError if component is not configured
+     */
     val middlewareComponent: MiddlewareComponent
         @Throws(MiddleWareError::class)
         get() = componentReference?.get() as? MiddlewareComponent
             ?: throw MiddleWareFoundationError.componentNotConfigured(Constants.COMPONENT_NAME)
 
+    /**
+     * Execute
+     *
+     * @param callback with callback for execution
+     */
     override suspend fun execute(callback: () -> Unit) {
         try {
             getExecutor().execute().handleResult(
@@ -48,6 +68,11 @@ internal abstract class BaseCommand : Command() {
         }
     }
 
+    /**
+     * Get executor
+     *
+     * @return executor
+     */
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     internal abstract suspend fun getExecutor(): BaseLocalExecutor<*, *>
 }

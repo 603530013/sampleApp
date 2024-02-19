@@ -1,5 +1,9 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
+import org.jetbrains.dokka.DokkaConfiguration.Visibility
+import org.jetbrains.dokka.gradle.DokkaTask
+import org.jetbrains.dokka.gradle.DokkaTaskPartial
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -7,6 +11,7 @@ plugins {
     id("plugins.app-build-config")
     id("plugins.library-build-config")
     id("kotlin-kapt")
+    id("org.jetbrains.dokka")
 }
 
 val runningTestCoverage = if (project.hasProperty("coverage")) {
@@ -38,5 +43,42 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+}
+tasks.withType<DokkaTask>().configureEach {
+    dokkaSourceSets.configureEach {
+        noAndroidSdkLink.set(true)
+        noStdlibLink.set(true)
+        noJdkLink.set(true)
+        skipEmptyPackages.set(true)
+        reportUndocumented.set(false)
+        skipDeprecated.set(true)
+        documentedVisibilities.set(
+            setOf(
+                Visibility.INTERNAL,
+                Visibility.PRIVATE,
+                Visibility.PROTECTED,
+                Visibility.PUBLIC
+            )
+        )
+    }
+}
+
+tasks.withType<DokkaTaskPartial>().configureEach {
+    dokkaSourceSets.configureEach {
+        noAndroidSdkLink.set(true)
+        noStdlibLink.set(true)
+        noJdkLink.set(true)
+        skipEmptyPackages.set(true)
+        reportUndocumented.set(false)
+        skipDeprecated.set(true)
+        documentedVisibilities.set(
+            setOf(
+                Visibility.INTERNAL,
+                Visibility.PRIVATE,
+                Visibility.PROTECTED,
+                Visibility.PUBLIC
+            )
+        )
     }
 }

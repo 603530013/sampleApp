@@ -28,6 +28,11 @@ internal class MiddlewareComponent : GenericCoreComponent() {
         }
     }
 
+    /**
+     * Init configure api
+     *
+     * @param commandManager with command manager. We will use it to fill command mapper in [initConfigureApi]
+     */
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     internal fun initConfigureApi(commandManager: ICommandManager) {
         val configureCommand = CommandName("${Constants.API_PREFIX}.${Constants.API.CONFIGURATION}")
@@ -38,6 +43,11 @@ internal class MiddlewareComponent : GenericCoreComponent() {
         )
     }
 
+    /**
+     * Init test api
+     *
+     * @param commandManager with command manager. We will use it to fill command mapper in [initTestApi]
+     */
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     internal fun initTestApi(commandManager: ICommandManager) {
         val configureCommand = CommandName("${Constants.API_PREFIX}.${Constants.API.TEST}")
@@ -48,6 +58,12 @@ internal class MiddlewareComponent : GenericCoreComponent() {
         )
     }
 
+    /**
+     * Initialize
+     *
+     * @param parameters with parameters for initialization
+     * @param callback with callback for initialization
+     */
     override fun initialize(
         parameters: Map<String, Any>,
         callback: (Map<String, Any>) -> Unit

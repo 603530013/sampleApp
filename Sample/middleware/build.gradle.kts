@@ -1,7 +1,12 @@
+import org.jetbrains.dokka.DokkaConfiguration.Visibility
+import org.jetbrains.dokka.gradle.DokkaTask
+import org.jetbrains.dokka.gradle.DokkaTaskPartial
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("org.jetbrains.dokka")
 }
 
 android {
@@ -51,4 +56,42 @@ dependencies {
     androidTestImplementation(libs.android.test.core)
     androidTestImplementation(libs.android.test.runner)
     androidTestImplementation(libs.android.test.rules)
+}
+
+tasks.withType<DokkaTask>().configureEach {
+    dokkaSourceSets.configureEach {
+        noAndroidSdkLink.set(true)
+        noStdlibLink.set(true)
+        noJdkLink.set(true)
+        skipEmptyPackages.set(true)
+        reportUndocumented.set(false)
+        skipDeprecated.set(true)
+        documentedVisibilities.set(
+            setOf(
+                Visibility.INTERNAL,
+                Visibility.PRIVATE,
+                Visibility.PROTECTED,
+                Visibility.PUBLIC,
+            )
+        )
+    }
+}
+
+tasks.withType<DokkaTaskPartial>().configureEach {
+    dokkaSourceSets.configureEach {
+        noAndroidSdkLink.set(true)
+        noStdlibLink.set(true)
+        noJdkLink.set(true)
+        skipEmptyPackages.set(true)
+        reportUndocumented.set(false)
+        skipDeprecated.set(true)
+        documentedVisibilities.set(
+            setOf(
+                Visibility.INTERNAL,
+                Visibility.PRIVATE,
+                Visibility.PROTECTED,
+                Visibility.PUBLIC,
+            )
+        )
+    }
 }

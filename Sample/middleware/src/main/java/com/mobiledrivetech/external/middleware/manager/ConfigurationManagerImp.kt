@@ -7,6 +7,14 @@ import com.mobiledrivetech.external.middleware.foundation.models.Market
 import com.mobiledrivetech.external.middleware.model.configuration.ConfigurationInput
 import java.util.Locale
 
+/**
+ * ConfigurationManagerImp is the implementation of [ConfigurationManager]
+ *
+ * @property environment with [Environment]
+ * @property brand with [Brand]
+ * @property locale with [Locale]
+ * @property market with [Market]
+ */
 internal class ConfigurationManagerImp : ConfigurationManager {
 
     private var _environment: Environment? = null
@@ -24,6 +32,12 @@ internal class ConfigurationManagerImp : ConfigurationManager {
     override val locale: Locale
         get() = _locale ?: Locale.ENGLISH
 
+    /**
+     * Initialize configuration
+     *
+     * @param component with component for initialization. See [MiddlewareComponent]
+     * @param config with configuration for initialization
+     */
     override fun initialize(
         component: MiddlewareComponent,
         config: ConfigurationInput
@@ -34,6 +48,12 @@ internal class ConfigurationManagerImp : ConfigurationManager {
         _market = config.market
     }
 
+    /**
+     * Update configuration
+     *
+     * @param component with component for update. See [MiddlewareComponent]
+     * @param config with configuration for update
+     */
     override fun update(
         component: MiddlewareComponent,
         config: ConfigurationInput

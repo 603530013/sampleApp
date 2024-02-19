@@ -15,9 +15,18 @@ import com.mobiledrivetech.external.middleware.model.Response
 import com.mobiledrivetech.external.middleware.model.configuration.ConfigurationInput
 import java.util.Locale
 
+/**
+ * Set configuration executor
+ */
 internal class SetConfigurationExecutor(command: BaseCommand) :
     BaseLocalExecutor<ConfigurationInput, Unit>(command) {
 
+    /**
+     * Convert parameters to [ConfigurationInput]
+     *
+     * @param parameters with parameters
+     * @return the configuration input which is [ConfigurationInput]
+     */
     override fun params(parameters: Map<String, Any?>?): ConfigurationInput {
         val profileMap: Map<String, Any>? = parameters hasOrNull Constants.PARAMS_KEY_PROFILE
 
@@ -40,6 +49,13 @@ internal class SetConfigurationExecutor(command: BaseCommand) :
         )
     }
 
+    /**
+     * Execute by [input]. For now we don't use it but we will use it in the future to manage
+     * the configuration
+     *
+     * @param input with [ConfigurationInput] type
+     * @return the response
+     */
     override suspend fun execute(input: ConfigurationInput): Response<Unit> {
         // Todo: For now we don't use it but we will use it in the future to manage the configuration
         return Response.Success(Unit)
