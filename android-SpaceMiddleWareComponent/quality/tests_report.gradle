@@ -1,0 +1,104 @@
+import groovy.time.TimeCategory
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
+import java.nio.file.Files
+import java.nio.file.Paths
+
+ext.testsResults = [] // Container for tests summaries
+ext.testsJsonResults = [] // Container for tests summaries
+
+allprojects { project ->
+    tasks.withType(Test) { testTask ->
+
+        testTask.testLogging { logging ->
+            events TestLogEvent.FAILED,
+                    TestLogEvent.SKIPPED,
+                    TestLogEvent.STANDARD_OUT,
+                    TestLogEvent.STANDARD_ERROR
+
+            exceptionFormat TestExceptionFormat.FULL
+            showExceptions true
+            showCauses true
+            showStackTraces true
+        }
+
+        ignoreFailures = true // Always try to run all tests for all modules
+
+        afterSuite { desc, result ->
+
+            if (desc.parent) return // Only summarize results for whole modules
+
+            String summary = "${testTask.project.name}:${testTask.name} results: ${result.resultType} " +
+                    "(" +
+                    "${result.testCount} tests, " +
+                    "${result.successfulTestCount} successes, " +
+                    "${result.failedTestCount} failures, " +
+                    "${result.skippedTestCount} skipped" +
+                    ") " +
+                    "in ${TimeCategory.minus(new Date(result.endTime), new Date(result.startTime))}" +
+                    "\n" +
+                    "Report file: ${testTask.reports.html.entryPoint}"
+
+            String jsonString = "{" +
+                    "\"project\": \"${testTask.project.name}\"," +
+                    "\"task\": \"${testTask.name}\"," +
+                    "\"results\": \"${result.resultType}\"," +
+                    "\"tests\":\"${result.testCount}\"," +
+                    "\"successes\":\"${result.successfulTestCount}\"," +
+                    "\"failures\":\"${result.failedTestCount}\"," +
+                    "\"skipped\":\"${result.skippedTestCount}\"," +
+                    "\"duration\":\"${TimeCategory.minus(new Date(result.endTime), new Date(result.startTime))}\"" +
+                    "}"
+
+            // Add reports in `testsResults`, keep failed suites at the end
+            if (result.resultType == TestResult.ResultType.SUCCESS) {
+                rootProject.testsResults.add(0, summary)
+                rootProject.testsJsonResults.add(0, jsonString)
+            } else {
+                rootProject.testsResults += summary
+                rootProject.testsJsonResults += jsonString
+            }
+        }
+    }
+}
+
+gradle.buildFinished {
+    def allResults = rootProject.ext.testsResults
+    def allJsonResults = rootProject.ext.testsJsonResults
+
+    if (!allResults.isEmpty()) {
+        printResults allResults
+        printJsonResults("${buildDir}/reports/unit-test/", allJsonResults)
+    }
+}
+
+private static void printResults(allResults) {
+    def maxLength = allResults*.readLines().flatten().collect { it.length() }.max()
+
+    println "┌${"${"─" * maxLength}"}┐"
+
+    println allResults.collect {
+        it.readLines().collect {
+            "│" + it + " " * (maxLength - it.length()) + "│"
+        }.join("\n")
+    }.join("\n├${"${"─" * maxLength}"}┤\n")
+
+    println "└${"${"─" * maxLength}"}┘"
+}
+
+private static void printJsonResults(pathDirectory, allJsonResults) {
+    String jsonContent = "${allJsonResults*.readLines().flatten()}"
+
+    def path = Paths.get(pathDirectory)
+
+    println("pathDirectory: $pathDirectory")
+
+    if (!Files.exists(path)) {
+        Files.createDirectories(path)
+    }
+
+    new File(pathDirectory, "report.json").withWriter("utf-8") {
+        writer -> writer.writeLine jsonContent
+    }
+}

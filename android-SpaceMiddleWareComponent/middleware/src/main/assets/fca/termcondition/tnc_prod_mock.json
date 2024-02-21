@@ -1,0 +1,976 @@
+{
+  "nafta": {
+    "SPRINT": {
+      "alfa": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "chrysler": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.chrysler.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.chrysler.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "dodge": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.chrysler.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.chrysler.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "fiat": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.fiat.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.fiat.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.fiat.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.fiat.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.fiat.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.fiat.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "ram": {
+        "defaultCountry": {
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/privacy-policy-sprint/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/terms-and-conditions-sprint/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "defaultBrand": {
+        "defaultCountry": {
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.{brand}.com/{market}/{language}/privacy-policy-sprint/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.{brand}.com/{market}/{language}/terms-and-conditions-sprint/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      }
+    },
+    "SXM": {
+      "alfa": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "chrysler": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.chrysler.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.chrysler.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "dodge": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.chrysler.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.chrysler.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "fiat": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.fiat.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.fiat.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.fiat.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.fiat.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.fiat.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.fiat.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "ram": {
+        "defaultCountry": {
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/privacy-policy-sxm/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/terms-and-conditions-sxm/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "defaultBrand": {
+        "defaultCountry": {
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.{brand}.com/{market}/{language}/privacy-policy-sxm/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.{brand}.com/{market}/{language}/terms-and-conditions-sxm/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      }
+    },
+    "GLOBAL": {
+      "alfa": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.alfaromeo.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "chrysler": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.chrysler.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.chrysler.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "dodge": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.chrysler.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.chrysler.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.chrysler.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "fiat": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.fiat.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.fiat.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.fiat.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.fiat.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.fiat.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.fiat.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "maserati": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.maserati.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.maserati.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "ram": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.ramtrucks.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "defaultBrand": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.{brand}.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.{brand}.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_POLICY": {
+            "url": "https://connect.{brand}.com/{market}/{language}/privacy-policy",
+            "mode": "BROWSER"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.{brand}.com/{market}/{language}/connected-services-privacy-policy/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.{brand}.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.{brand}.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      }
+    }
+  },
+  "emea": {
+    "GLOBAL": {
+      "alfa": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "fiat": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "jeep": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "maserati": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.maserati.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.maserati.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "defaultBrand": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      }
+    }
+  },
+  "latam": {
+    "GLOBAL": {
+      "alfa": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "fiat": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "jeep": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "maserati": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.maserati.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.maserati.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "ram": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.ram.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.ram.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.ram.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.ram.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      },
+      "defaultBrand": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        }
+      }
+    }
+  },
+  "iap": {
+    "GLOBAL": {
+      "alfa": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myalfaconnect.alfaromeo.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        },
+        "kr": {
+            "ENDPOINT_PRIVACY_POLICY": {
+                "url": "https://myalfaconnect.alfaromeo.com/kr/{language}/privacy-policy",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_PERSONAL_INFORMATION": {
+                "url": "https://myalfaconnect.alfaromeo.com/kr/{language}/collect-and-use-of-personal-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_LOCATION_INFORMATION": {
+                "url": "https://myalfaconnect.alfaromeo.com/kr/{language}/collect-and-use-of-location-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_WEBSITE_TERMS_OF_USE": {
+                "url": "https://myalfaconnect.alfaromeo.com/kr/{language}/website-terms-of-use",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_TERMS_AND_CONDITIONS_BASIC": {
+                "url": "https://myalfaconnect.alfaromeo.com/kr/{language}/terms-and-conditions-basic/latest.jsonview",
+              "mode": "LOCAL"
+            }
+        }
+      },
+      "fiat": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myuconnect.fiat.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        },
+        "kr": {
+            "ENDPOINT_PRIVACY_POLICY": {
+                "url": "https://myuconnect.fiat.com/kr/{language}/privacy-policy",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_PERSONAL_INFORMATION": {
+                "url": "https://myuconnect.fiat.com/kr/{language}/collect-and-use-of-personal-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_LOCATION_INFORMATION": {
+                "url": "https://myuconnect.fiat.com/kr/{language}/collect-and-use-of-location-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_WEBSITE_TERMS_OF_USE": {
+                "url": "https://myuconnect.fiat.com/kr/{language}/website-terms-of-use",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_TERMS_AND_CONDITIONS_BASIC": {
+                "url": "https://myuconnect.fiat.com/kr/{language}/terms-and-conditions-basic/latest.jsonview",
+              "mode": "LOCAL"
+            }
+        }
+      },
+      "jeep": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        },
+        "kr": {
+            "ENDPOINT_PRIVACY_POLICY": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/privacy-policy",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_PERSONAL_INFORMATION": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/collect-and-use-of-personal-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_LOCATION_INFORMATION": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/collect-and-use-of-location-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_WEBSITE_TERMS_OF_USE": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/website-terms-of-use",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_TERMS_AND_CONDITIONS_BASIC": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/terms-and-conditions-basic/latest.jsonview",
+              "mode": "LOCAL"
+            }
+        }
+      },
+      "maserati": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://connect.maserati.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://connect.maserati.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://connect.maserati.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        },
+        "kr": {
+            "ENDPOINT_PRIVACY_POLICY": {
+                "url": "https://connect.maserati.com/kr/{language}/privacy-policy",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_PERSONAL_INFORMATION": {
+                "url": "https://connect.maserati.com/kr/{language}/collect-and-use-of-personal-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_LOCATION_INFORMATION": {
+                "url": "https://connect.maserati.com/kr/{language}/collect-and-use-of-location-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_WEBSITE_TERMS_OF_USE": {
+                "url": "https://connect.maserati.com/kr/{language}/website-terms-of-use",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_TERMS_AND_CONDITIONS_BASIC": {
+                "url": "https://connect.maserati.com/kr/{language}/terms-and-conditions-basic/latest.jsonview",
+              "mode": "LOCAL"
+            }
+        }
+      },
+      "defaultBrand": {
+        "defaultCountry": {
+          "ENDPOINT_APPLICATION_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/application-terms-of-use/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PROFILE_INCOMPLETE": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/login",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_PRIVACY_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/privacy-terms/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_TERMS_AND_CONDITIONS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/terms-and-conditions/latest.jsonview",
+            "mode": "LOCAL"
+          },
+          "ENDPOINT_WEB_TERMS": {
+            "url": "https://myuconnect.jeep.com/{market}/{language}/website-application-terms/latest.jsonview",
+            "mode": "LOCAL"
+          }
+        },
+        "kr": {
+            "ENDPOINT_PRIVACY_POLICY": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/privacy-policy",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_PERSONAL_INFORMATION": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/collect-and-use-of-personal-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_COLLECT_AND_USE_OF_LOCATION_INFORMATION": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/collect-and-use-of-location-information/latest.jsonview",
+              "mode": "LOCAL"
+            },
+            "ENDPOINT_WEBSITE_TERMS_OF_USE": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/website-terms-of-use",
+              "mode": "BROWSER"
+            },
+            "ENDPOINT_TERMS_AND_CONDITIONS_BASIC": {
+                "url": "https://myuconnect.jeep.com/kr/{language}/terms-and-conditions-basic/latest.jsonview",
+              "mode": "LOCAL"
+            }
+        }
+      }
+    }
+  }
+}

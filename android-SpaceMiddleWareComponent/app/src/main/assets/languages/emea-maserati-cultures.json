@@ -1,0 +1,140 @@
+{
+    "AT": {
+        "languages": [
+            "de_AT"
+        ]
+    },
+    "BE": {
+        "languages": [
+            "fr_BE",
+            "nl_BE"
+        ]
+    },
+    "BG": {
+        "languages": [
+            "en_BG"
+        ]
+    },
+    "CY": {
+        "languages": [
+            "en_CY"
+        ]
+    },
+    "CZ": {
+        "languages": [
+            "cs_CZ"
+        ]
+    },
+    "DK": {
+        "languages": [
+            "en_DK"
+        ]
+    },
+    "EE": {
+        "languages": [
+            "en_EE"
+        ]
+    },
+    "FR": {
+        "languages": [
+            "fr_FR"
+        ]
+    },
+    "DE": {
+        "languages": [
+            "de_DE"
+        ]
+    },
+    "GR": {
+        "languages": [
+            "en_GR"
+        ]
+    },
+    "HU": {
+        "languages": [
+            "hu_HU"
+        ]
+    },
+    "IE": {
+        "languages": [
+            "en_IE"
+        ]
+    },
+    "IT": {
+        "languages": [
+            "it_IT"
+        ]
+    },
+    "LV": {
+        "languages": [
+            "en_LV"
+        ]
+    },
+    "LT": {
+        "languages": [
+            "en_LT"
+        ]
+    },
+    "LU": {
+        "languages": [
+            "en_LU"
+        ]
+    },
+    "NL": {
+        "languages": [
+            "nl_NL"
+        ]
+    },
+    "PL": {
+        "languages": [
+            "pl_PL"
+        ]
+    },
+    "PT": {
+        "languages": [
+            "pt_PT"
+        ]
+    },
+    "RO": {
+        "languages": [
+            "ro_RO"
+        ]
+    },
+    "SK": {
+        "languages": [
+            "en_SK"
+        ]
+    },
+    "SI": {
+        "languages": [
+            "en_SI"
+        ]
+    },
+    "ES": {
+        "languages": [
+            "es_ES"
+        ]
+    },
+    "SE": {
+        "languages": [
+            "en_SE"
+        ]
+    },
+    "GB": {
+        "languages": [
+            "en_GB"
+        ]
+    },
+    "NO": {
+        "languages": [
+            "en_NO"
+        ]
+    },
+    "CH": {
+        "languages": [
+            "de_CH",
+            "it_CH",
+            "fr_CH"
+        ]
+    }
+}

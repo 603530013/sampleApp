@@ -1,0 +1,38 @@
+{
+  "types": {
+    "feat": {
+      "description": "Changes which introduce a new feature"
+    },
+    "fix": {
+      "description": "Changes which patch a bug"
+    },
+    "refactor": {
+      "description": "Changes which neither fix a bug nor add a feature",
+      "scopes": {
+        "architecture": {},
+        "ui": {},
+        "test": {},
+        "dependencies": {}
+      }
+    },
+    "test": {
+      "description": "Changes which add missing tests or correct existing tests",
+      "scopes": {
+        "new": {},
+        "missing": {}
+      }
+    },
+    "docs": {
+      "description": "Changes which affect documentation"
+    },
+    "ci": {
+      "description": "Changes which affect CI configuration files and scripts."
+    },
+    "revert": {
+      "description": "Changes which revert a previous commit"
+    },
+    "chore": {
+      "description": "Changes which are out of the other scope, like preparing release, ..."
+    }
+  }
+}

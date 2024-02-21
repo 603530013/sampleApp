@@ -1,0 +1,86 @@
+apply plugin: "maven-publish"
+
+private static def getSnapshotSuffix(Project project) {
+    if (project.properties.isRelease == "true") {
+        return ""
+    }
+    // By default we are snapshoting
+    return "-SNAPSHOT"
+}
+
+private static def getSuffixedVersion(Project project) {
+    return "${project.version}${getSnapshotSuffix(project)}"
+}
+
+def sourceFiles = android.sourceSets.getByName("main").java.getSourceFiles()
+
+tasks.register("withJavadoc", Javadoc) {
+    setFailOnError(false)
+    dependsOn(tasks.named("compileDebugSources"), tasks.named("compileReleaseSources"))
+
+    // add Android runtime classpath
+    android.bootClasspath.forEach { classpath += project.fileTree(it) }
+
+    // add classpath for all dependencies
+    android.libraryVariants.forEach { variant ->
+        variant.javaCompileProvider.get().classpath.files.forEach { file ->
+            classpath += project.fileTree(file)
+        }
+    }
+
+    source = sourceFiles
+}
+
+tasks.register("withJavadocJar", Jar) {
+    dependsOn(dokkaJavadoc)
+    archiveClassifier.set("javadoc")
+    from(dokkaJavadoc.outputDirectory)
+}
+
+tasks.register("withSourcesJar", Jar) {
+    archiveClassifier.set("sources")
+    from(sourceFiles)
+}
+
+android {
+    publishing {
+        singleVariant("release") {
+            // if you don't want sources/javadoc, remove these lines
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                def releasesRepoUrl = "https://repository.inetpsa.com/maven-psa-releases"
+                def snapshotsRepoUrl = "https://repository.inetpsa.com/maven-psa-snapshots"
+
+                url = (project.properties.isRelease == "true") ? releasesRepoUrl : snapshotsRepoUrl
+                metadataSources {
+                    gradleMetadata()
+                    mavenPom()
+                    artifact()
+                }
+                if (project.hasProperty("artifactoryUserName") && project.hasProperty("artifactoryUserPassword")) {
+                    credentials {
+                        username = project.property("artifactoryUserName")
+                        password = project.property("artifactoryUserPassword")
+                    }
+                }
+            }
+        }
+
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId "${project.group}"
+                artifactId "${project.archivesBaseName}"
+                version "${getSuffixedVersion(project)}"
+            }
+        }
+    }
+}

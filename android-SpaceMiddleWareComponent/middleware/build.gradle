@@ -1,0 +1,99 @@
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-parcelize"
+apply from: "$rootDir/quality/dokka.gradle"
+
+group = 'com.inetpsa.mmx'
+archivesBaseName = 'SpaceMiddleware'
+version = '1.2.15'
+
+apply from: "$rootDir/quality/maven.gradle"
+
+android {
+    namespace 'com.inetpsa.pims.spaceMiddleware'
+    compileSdkVersion 33
+
+    defaultConfig {
+        multiDexEnabled true
+        minSdkVersion 24
+        targetSdkVersion 33
+
+        buildConfigField "String", "VERSION_NAME", "\"$version\""
+
+        buildConfigField "String", "MYM_PROD", "\"PuA9wg23\""
+        buildConfigField "String", "MYM_NOT_PROD", "\"7x86fnKQ\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            testCoverageEnabled false
+            // AGP 7.3+ (at least one should be true for this module to be included in the reporting)
+            enableUnitTestCoverage false
+            enableAndroidTestCoverage false
+        }
+
+        debug {
+            minifyEnabled false
+            // AGP 7.3+ (at least one should be true for this module to be included in the reporting)
+            enableUnitTestCoverage true
+            enableAndroidTestCoverage true
+            testCoverageEnabled true
+        }
+    }
+
+    lint {
+        checkAllWarnings = true
+        warningsAsErrors = false
+        showAll = true
+        abortOnError = false
+        explainIssues = true
+        checkDependencies = false
+        xmlOutput = file("${project.rootDir}/build/reports/android-lint/report.xml")
+        htmlOutput = file("${project.rootDir}/build/reports/android-lint/report.html")
+
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+        }
+    }
+
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+dependencies {
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:1.2.2"
+    implementation "androidx.core:core-ktx:1.9.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.2"
+
+    //Foundation
+    implementation "com.inetpsa.mmx:foundation:1.12.25"
+
+    implementation "com.google.code.gson:gson:2.9.1"
+    implementation "com.squareup.okhttp3:okhttp:4.9.1"
+
+    //UnitTest
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "io.mockk:mockk:1.13.2"
+    testImplementation "org.assertj:assertj-core:3.23.1"
+    testImplementation "androidx.test.ext:junit-ktx:1.1.5"
+    testImplementation "androidx.test:core:1.4.0"
+    testImplementation "androidx.test:runner:1.4.0"
+    testImplementation "androidx.test:rules:1.4.0"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.2"
+    testImplementation "com.squareup.okhttp3:mockwebserver:4.9.1"
+}

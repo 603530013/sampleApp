@@ -1,0 +1,6 @@
+include ':middleware'
+include ':app'
+rootProject.name = "SpaceMiddleware"
+
+// include(":sample-ui")
+// project(":sample-ui").projectDir = new File(settingsDir, "../android-PIMSSampleUI/sample-ui")

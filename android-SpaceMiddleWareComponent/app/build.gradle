@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+
+
+android {
+    namespace 'com.inetpsa.pims.spaceMiddleware.sample'
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.inetpsa.pims.spaceMiddleware.sample"
+        minSdkVersion 28
+        targetSdkVersion 33
+        versionCode 16
+        versionName "1.2.15-SNAPSHOT"
+
+        android.defaultConfig.manifestPlaceholders = [
+                'appAuthRedirectScheme': 'pims'
+        ]
+    }
+    signingConfigs {
+        release {
+            storeFile file(System.getenv("KEYSTORE_RELEASE_STORE_FILE") ?: "./")
+            storePassword System.getenv("KEYSTORE_RELEASE_STORE_PASSWORD")
+            keyAlias System.getenv("KEYSTORE_RELEASE_KEY_ALIAS")
+            keyPassword System.getenv("KEYSTORE_RELEASE_KEY_PASSWORD")
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            testCoverageEnabled false
+            // AGP 7.3+ (at least one should be true for this module to be included in the reporting)
+            enableUnitTestCoverage false
+            enableAndroidTestCoverage false
+        }
+    }
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+
+        // Sets Java compatibility to Java 8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.2.0-rc02"
+        kotlinCompilerVersion kotlinVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.2'
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    //PIMSComponent
+    // implementation('com.inetpsa.mmx:SpaceMiddleware:1.2.15')
+    //Local PIMSComponent
+    implementation project(':middleware')
+
+    // sample UI
+    implementation "com.inetpsa.mmx:sample-ui-middleware:1.2.77"
+    // implementation project(":sample-ui")
+
+    // compose
+    implementation "androidx.compose.runtime:runtime:1.3.3"
+
+    //UnitTest
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.squareup.moshi:moshi:1.14.0'
+    implementation 'com.squareup.moshi:moshi-kotlin:1.12.0'
+    implementation 'com.squareup.moshi:moshi-adapters:1.6.0'
+    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.14.0'
+
+}

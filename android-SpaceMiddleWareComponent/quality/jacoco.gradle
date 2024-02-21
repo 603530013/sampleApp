@@ -1,0 +1,76 @@
+rootCoverage {
+    // The default build variant for every module
+    buildVariant "debug"
+
+    // Class & package exclude patterns
+    excludes = [
+            // data binding
+            'android/databinding/**/*.class',
+            '**/android/databinding/*Binding.class',
+            '**/android/databinding/*',
+            '**/androidx/databinding/*',
+            '**/BR.*',
+            // android
+            '**/R.class',
+            '**/R$*.class',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+            '**/*Test*.*',
+            'android/**/*.*',
+            // butterKnife
+            '**/*$ViewInjector*.*',
+            '**/*$ViewBinder*.*',
+            // dagger
+            '**/*_MembersInjector.class',
+            '**/Dagger*Component.class',
+            '**/Dagger*Component$Builder.class',
+            '**/*Module_*Factory.class',
+            '**/di/module/*',
+            '**/*_Factory*.*',
+            '**/*Module*.*',
+            '**/*Dagger*.*',
+            '**/*Hilt*.*',
+            // kotlin
+            '**/*MapperImpl*.*',
+            '**/*$ViewInjector*.*',
+            '**/*$ViewBinder*.*',
+            '**/BuildConfig.*',
+            '**/*Component*.*',
+            '**/*BR*.*',
+            '**/Manifest*.*',
+            '**/*$Lambda$*.*',
+            '**/*Companion*.*',
+            '**/*Module*.*',
+            '**/*Dagger*.*',
+            '**/*Hilt*.*',
+            '**/*MembersInjector*.*',
+            '**/*_MembersInjector.class',
+            '**/*_Factory*.*',
+            '**/*_Provide*Factory*.*',
+            '**/*Extensions*.*',
+            // sealed and data classes
+            '**/*$Result.*',
+            '**/*$Result$*.*'
+    ]
+
+    // Since 1.1 generateHtml is by default true
+    generateCsv(false)
+    generateXml(true)
+    generateHtml(true)
+
+    // Since 1.2: Same as executeTests except that this only affects the instrumented Android tests
+    setExecuteAndroidTests(true)
+
+    // Since 1.2: Same as executeTests except that this only affects the unit tests
+    executeUnitTests(true)
+
+    // Since 1.2: When true include results from instrumented Android tests into the coverage report
+    includeAndroidTestResults(true)
+
+    // Since 1.2: When true include results from unit tests into the coverage report
+    includeUnitTestResults(true)
+
+    // Since 1.4: Sets jacoco.includeNoLocationClasses, so you don't have to. Helpful when using Robolectric
+    // which usually requires this attribute to be true
+    includeNoLocationClasses(false)
+}

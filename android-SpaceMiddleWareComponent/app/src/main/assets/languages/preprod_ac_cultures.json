@@ -1,0 +1,806 @@
+{
+  "GB" : {
+    "languages" : [
+      "en_GB"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_GB_ESP",
+    "civility" : {
+      "en_GB" : [
+        "MISS",
+        "MR",
+        "MRS",
+        "MS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "M",
+      "volume" : "G",
+      "fuelEfficiency" : "MPG",
+      "cost" : "L"
+    },
+    "additionalCurrencies" : [
+      "EUR"
+    ]
+  },
+  "AE" : {
+    "languages" : [
+      "ar_AE",
+      "en_AE"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_AE_ESP",
+    "civility" : {
+      "ar_AE" : [],
+      "en_AE" : []
+    },
+    "defaultUnits" : {
+      "length" : "M",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "AR" : {
+    "languages" : [
+      "es_AR"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_AR_ESP",
+    "civility" : {
+      "es_AR" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "AT" : {
+    "languages" : [
+      "de_AT"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_AT_ESP",
+    "civility" : {
+      "de_AT" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "BE" : {
+    "languages" : [
+      "fr_BE",
+      "nl_BE"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_BE_ESP",
+    "civility" : {
+      "fr_BE" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ],
+      "nl_BE" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "BR" : {
+    "languages" : [
+      "pt_BR"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_BR_ESP",
+    "civility" : {
+      "pt_BR" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "KM\/L",
+      "cost" : "L"
+    },
+    "additionalCurrencies" : [
+      "USD"
+    ]
+  },
+  "CH" : {
+    "languages" : [
+      "de_CH",
+      "fr_CH",
+      "it_CH"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_CH_ESP",
+    "civility" : {
+      "de_CH" : [
+        "MR",
+        "MRS"
+      ],
+      "fr_CH" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ],
+      "it_CH" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    },
+    "additionalCurrencies" : [
+      "EUR",
+      "USD"
+    ]
+  },
+  "CL" : {
+    "languages" : [
+      "es_CL"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_CL_ESP",
+    "civility" : {
+      "es_CL" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "CO" : {
+    "languages" : [
+      "es_CO"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_CO_ESP",
+    "civility" : {
+      "es_CO" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "CZ" : {
+    "languages" : [
+      "cs_CZ"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_CZ_ESP",
+    "civility" : {
+      "cs_CZ" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "DE" : {
+    "languages" : [
+      "de_DE"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_DE_ESP",
+    "civility" : {
+      "de_DE" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "DK" : {
+    "languages" : [
+      "da_DK"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_DK_ESP",
+    "civility" : {
+      "da_DK" : []
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "KM\/L",
+      "cost" : "L"
+    }
+  },
+  "DZ" : {
+    "languages" : [
+      "fr_DZ"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_DZ_ESP",
+    "civility" : {
+      "fr_DZ" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "ES" : {
+    "languages" : [
+      "es_ES"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_ES_ESP",
+    "civility" : {
+      "es_ES" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "FR" : {
+    "languages" : [
+      "fr_FR"
+    ],
+    "messageDOM" : true,
+    "siteCode" : "AC_FR_ESP",
+    "civility" : {
+      "fr_FR" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "GR" : {
+    "languages" : [
+      "el_GR"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_GR_ESP",
+    "civility" : {
+      "el_GR" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "HR" : {
+    "languages" : [
+      "hr_HR"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_HR_ESP",
+    "civility" : {
+      "hr_HR" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "HU" : {
+    "languages" : [
+      "hu_HU"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_HU_ESP",
+    "civility" : {
+      "hu_HU" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "IE" : {
+    "languages" : [
+      "en_IE"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_IE_ESP",
+    "civility" : {
+      "en_IE" : [
+        "MISS",
+        "MR",
+        "MRS",
+        "MS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "IL" : {
+    "languages" : [
+      "he_IL"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_IL_ESP",
+    "civility" : {
+      "he_IL" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "IN" : {
+    "languages" : [
+      "en_IN"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_IN_ESP",
+    "civility" : {
+      "en_IN" : [
+        "MISS",
+        "MR",
+        "MRS",
+        "MS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "KM\/L",
+      "cost" : "L"
+    },
+    "additionalCurrencies" : [
+      "INR"
+    ]
+  },
+  "IR" : {
+    "languages" : [
+      "fa_IR"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_IR_ESP",
+    "civility" : {
+      "fa_IR" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "KM\/L",
+      "cost" : "L"
+    }
+  },
+  "IS" : {
+    "languages" : [
+      "en_IS"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_IS_ESP",
+    "civility" : {
+      "en_IS" : [
+        "MISS",
+        "MR",
+        "MRS",
+        "MS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    },
+    "additionalCurrencies" : [
+      "ISK"
+    ]
+  },
+  "IT" : {
+    "languages" : [
+      "it_IT"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_IT_ESP",
+    "civility" : {
+      "it_IT" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "JP" : {
+    "languages" : [
+      "ja_JP"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_JP_ESP",
+    "civility" : {
+      "ja_JP" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "KM\/L",
+      "cost" : "L"
+    }
+  },
+  "LU" : {
+    "languages" : [
+      "fr_LU"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_LU_ESP",
+    "civility" : {
+      "fr_LU" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "MA" : {
+    "languages" : [
+      "fr_MA"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_MA_ESP",
+    "civility" : {
+      "fr_MA" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "MQ" : {
+    "languages" : [
+      "fr_MQ"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_MQ_ESP",
+    "civility" : {
+      "fr_MQ" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "NL" : {
+    "languages" : [
+      "nl_NL"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_NL_ESP",
+    "civility" : {
+      "nl_NL" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "NO" : {
+    "languages" : [
+      "nb_NO"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_NO_ESP",
+    "civility" : {
+      "nb_NO" : []
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "PL" : {
+    "languages" : [
+      "pl_PL"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_PL_ESP",
+    "civility" : {
+      "pl_PL" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    },
+    "additionalCurrencies" : [
+      "EUR"
+    ]
+  },
+  "PT" : {
+    "languages" : [
+      "pt_PT"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_PT_ESP",
+    "civility" : {
+      "pt_PT" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "RO" : {
+    "languages" : [
+      "ro_RO"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_RO_ESP",
+    "civility" : {
+      "ro_RO" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "RU" : {
+    "languages" : [
+      "ru_RU"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_RU_ESP",
+    "civility" : {
+      "ru_RU" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "SE" : {
+    "languages" : [
+      "sv_SE"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_SE_ESP",
+    "civility" : {
+      "sv_SE" : []
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "SI" : {
+    "languages" : [
+      "sl_SI"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_SI_ESP",
+    "civility" : {
+      "sl_SI" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "SK" : {
+    "languages" : [
+      "sk_SK"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_SK_ESP",
+    "civility" : {
+      "sk_SK" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "TN" : {
+    "languages" : [
+      "fr_TN"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_TN_ESP",
+    "civility" : {
+      "fr_TN" : [
+        "MISS",
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "TR" : {
+    "languages" : [
+      "tr_TR"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_TR_ESP",
+    "civility" : {
+      "tr_TR" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  },
+  "UY" : {
+    "languages" : [
+      "es_UY"
+    ],
+    "messageDOM" : false,
+    "siteCode" : "AC_UY_ESP",
+    "civility" : {
+      "es_UY" : [
+        "MR",
+        "MRS"
+      ]
+    },
+    "defaultUnits" : {
+      "length" : "K",
+      "volume" : "L",
+      "fuelEfficiency" : "L\/100",
+      "cost" : "L"
+    }
+  }
+}

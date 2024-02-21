@@ -1,0 +1,62 @@
+apply plugin: "org.jetbrains.dokka"
+
+
+tasks.dokkaHtml.configure {
+    def buildDir = getProject().getBuildDir()
+    outputDirectory.set(new File("${buildDir}/dokka/html"))
+
+    dokkaSourceSets {
+        named("main") {
+            includeNonPublic.set(false)
+            noJdkLink.set(true)
+            noStdlibLink.set(true)
+            noAndroidSdkLink.set(true)
+
+            externalDocumentationLink {
+                url.set(new URL("https://developer.android.com/reference/"))
+                packageListUrl.set(PsaPublishPlugin.class.getClassLoader().getResource('dokka/package-list'))
+            }
+
+            if (getProject().hasProperty('dokkaExcludedModules')) {
+                def excludedModules = getProject().property('dokkaExcludedModules').split(",")
+
+                for (String excludeTargetItem in excludedModules) {
+                    perPackageOption {
+                        prefix.set(excludeTargetItem)
+                        suppress.set(true)
+                    }
+                }
+            }
+        }
+    }
+}
+
+tasks.dokkaJavadoc.configure {
+    def buildDir = getProject().getBuildDir()
+    outputDirectory.set(new File("${buildDir}/dokka/javadoc"))
+
+    dokkaSourceSets {
+        named("main") {
+            includeNonPublic.set(false)
+            noJdkLink.set(true)
+            noStdlibLink.set(true)
+            noAndroidSdkLink.set(true)
+
+            externalDocumentationLink {
+                url.set(new URL("https://developer.android.com/reference/"))
+                packageListUrl.set(PsaPublishPlugin.class.getClassLoader().getResource('dokka/package-list'))
+            }
+
+            if (getProject().hasProperty('dokkaExcludedModules')) {
+                def excludedModules = getProject().property('dokkaExcludedModules').split(",")
+
+                for (String excludeTargetItem in excludedModules) {
+                    perPackageOption {
+                        prefix.set(excludeTargetItem)
+                        suppress.set(true)
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,155 @@
+import io.gitlab.arturbosch.detekt.Detekt
+import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
+import io.gitlab.arturbosch.detekt.report.ReportMergeTask
+
+buildscript {
+    ext.kotlinVersion = '1.6.21'
+
+    repositories {
+        maven {
+            url project.property("psaRepositoryUrl")
+            credentials {
+                username = project.property("psaRepositoryUserName")
+                password = project.property("psaRepositoryUserPassword")
+            }
+        }
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.6.21")
+    }
+}
+
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "1.22.0"
+    id "com.diffplug.spotless" version "6.17.0"
+    id "nl.neotech.plugin.rootcoverage" version "1.6.0"
+}
+
+//region Detekt Merge report task Config
+tasks.create("reportMerge", ReportMergeTask) {
+    output = project.layout.buildDirectory.file("reports/detekt/report.xml") // or "reports/detekt/merge.sarif"
+}
+//endregion
+
+allprojects {
+    repositories {
+        maven {
+            url project.hasProperty("psaRepositoryUrl") ? project.property("psaRepositoryUrl") : "http://ciq-repository.inetpsa.com/repository/virtual"
+            metadataSources {
+                gradleMetadata()
+                mavenPom()
+                artifact()
+            }
+            if (project.hasProperty("psaRepositoryUserName") && project.hasProperty("psaRepositoryUserPassword")) {
+                credentials {
+                    username = project.property("psaRepositoryUserName")
+                    password = project.property("psaRepositoryUserPassword")
+                }
+            }
+        }
+        google()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    //region Detekt Config
+    apply plugin: 'io.gitlab.arturbosch.detekt'
+
+    dependencies {
+        "detektPlugins"("io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0-RC2")
+    }
+
+    detekt {
+        config = files("${rootDir}/quality/detekt/detekt.yml")
+        buildUponDefaultConfig = true
+        ignoreFailures = true
+        basePath = rootProject.projectDir.path
+    }
+
+    tasks.withType(Detekt).configureEach {
+        jvmTarget = "1.8"
+        reports {
+            // Enable/Disable XML report (default: true)
+            xml.required.set(true)
+            xml.outputLocation.set(file("build/reports/detekt.xml"))
+            // Enable/Disable HTML report (default: true)
+            html.required.set(true)
+            html.outputLocation.set(file("build/reports/detekt.html"))
+        }
+
+        finalizedBy(reportMerge)
+
+        reportMerge.configure { mergeTask ->
+            mergeTask.input.from(xmlReportFile)
+        }
+    }
+
+    tasks.withType(DetektCreateBaselineTask).configureEach {
+        jvmTarget = "1.8"
+    }
+    //endregion
+
+    //region Spotless Config
+    apply plugin: 'io.gitlab.arturbosch.detekt'
+    //endregion
+}
+
+//region Spotless Config
+spotless {
+    format("misc") {
+        target "**/*.md", "**/.gitignore", "**/*.yaml", "**/*.yml"
+        indentWithSpaces()
+        endWithNewline()
+        trimTrailingWhitespace()
+    }
+
+    format("xml") {
+        target("**/res/**/*.xml")
+        indentWithSpaces(4)
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    kotlin {
+        target("**/*.kt", "**/*.kts")
+        ktlint()
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+
+
+        custom("Remove commented-out import statements") { rule ->
+            rule.replace("\\R?(//|/\\*)+\\s*import.*", "")
+        }
+
+        custom("Refuse wildcard imports") {
+            // Wildcard imports can't be resolved by spotless itself.
+            // This will require the developer themselves to adhere to best practices.
+            if (it.findAll("\\R?import.*\\.\\*").empty) {
+                it
+            } else {
+                def message = "Don't use wildcard imports.  'spotlessApply' cannot resolve this issue."
+                throw new AssertionError(message)
+            }
+        }
+    }
+    kotlinGradle {
+        target("**/*.gradle.kts", "*.gradle.kts")
+        ktlint()
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+    }
+}
+//endregion
+
+
+apply from: "$rootDir/quality/tests_report.gradle"
+apply from: "$rootDir/quality/gitHooks.gradle"
+apply from: "$rootDir/quality/jacoco.gradle"
