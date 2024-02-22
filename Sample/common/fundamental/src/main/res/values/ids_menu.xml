@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- id menu -->
-    <item name="home" type="id" />
-    <item name="navigation" type="id" />
-    <item name="trips" type="id" />
-    <item name="vehicle" type="id" />
-</resources>
