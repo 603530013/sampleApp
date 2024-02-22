@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- id nav host components -->
+    <item name="navigation.host.activity" type="id" />
+    <item name="navigation.host.bottom.sheet.behavior" type="id" />
+    <item name="navigation.host.bottom.sheet.background" type="id" />
+    <item name="navigation.host.fragment.bottomNavigationView" type="id" />
+    <item name="navigation.graph.enrollment" type="id" />
+    <item name="navigation.graph.trustedPhoneNumber" type="id" />
+    <item name="navigation.dialog.error" type="id" />
+    <item name="navigation.action.showError" type="id" />
+</resources>
